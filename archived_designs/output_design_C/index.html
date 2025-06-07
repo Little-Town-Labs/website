@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Town Labs - Design C</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">LTL</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Connect</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Open Menu">&#x2261;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Little Town Labs</h1>
+                <p class="tagline">Transformative AI-Powered Solutions.</p>
+                <p class="description">A strategic software development and data consultancy delivering innovative AI solutions in Educational Technology, Enterprise Data Analytics, and AI Agent Development.</p>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Our Vision & Mission</h2>
+                <div class="dual-column">
+                    <div>
+                        <h3>Vision</h3>
+                        <p>Democratizing access to intelligent software solutions.</p>
+                    </div>
+                    <div>
+                        <h3>Mission</h3>
+                        <p>To create transformative software that addresses real-world challenges in education and enterprise data while pioneering scalable AI frameworks for future innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="content-section services-showcase">
+            <div class="container">
+                <h2 class="section-title">Core Business Verticals</h2>
+                <article class="service-item">
+                    <h3>Educational Technology - HomeschoolingMinds</h3>
+                    <p>Focusing on homeschooling compliance and educational management, we offer: intelligent transcript tracking, AI-guided educational planning, and compliance tools tailored to state regulations.</p>
+                    <p class="meta-info">Value: Simplifying compliance, enhancing educational planning.</p>
+                </article>
+                <hr class="separator">
+                <article class="service-item">
+                    <h3>Enterprise Data Analytics Consultancy</h3>
+                    <p>Serving mid-to-large enterprises, we provide: data warehouse design and implementation, automated ETL/ELT pipeline development, and custom business intelligence dashboards.</p>
+                    <p class="meta-info">Edge: 10x faster solutions via AI-enhanced development, transparency, scalability.</p>
+                </article>
+                <hr class="separator">
+                <article class="service-item">
+                    <h3>AI Agent Development - FlyteCode Platform</h3>
+                    <p>We specialize in scalable AI agent frameworks, offering: custom AI agent development, workflow automation, and integration with existing systems.</p>
+                    <p class="meta-info">Benefit: Accelerates feature development, creates reusable components.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section approach-highlight">
+            <div class="container">
+                <h2 class="section-title">Our Approach</h2>
+                <p>Utilizing a modern development stack and AI-enhanced workflows, we focus on:</p>
+                <ul>
+                    <li>Automated testing and quality assurance</li>
+                    <li>Documentation-driven development for maintainability</li>
+                    <li>Reusable patterns for scalability</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="content-section founder-spotlight">
+            <div class="container">
+                <h2 class="section-title">About the Founder</h2>
+                <p>Gary, our founder, combines extensive enterprise data expertise with a deep understanding of educational challenges, driving our mission to deliver intelligent, scalable solutions tailored for both enterprises and communities.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-cta">
+            <div class="container">
+                <h2 class="section-title">Join Little Town Labs</h2>
+                <p>Redefine the landscape of software solutions with us. Empower your business or educational institution with cutting-edge AI technologies.</p>
+                <a href="mailto:hello@littletownlabs.dev" class="btn">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Little Town Labs. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

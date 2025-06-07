@@ -1,0 +1,311 @@
+:root {
+    --jet: #363537;
+    --emerald: #0cce6b;
+    --pear: #dced31;
+    --red-crayola: #ef2d56;
+    --pumpkin: #ed7d3a;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--jet);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+header {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--emerald);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--jet);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--emerald);
+}
+
+.cta-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-cta {
+    background-color: var(--emerald);
+    color: var(--white);
+}
+
+.nav-cta:hover {
+    background-color: #0abf63; /* Slightly darker emerald */
+    transform: translateY(-2px);
+}
+
+.hero {
+    background-color: var(--light-gray);
+    padding: 4rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 80vh;
+}
+
+.hero-content {
+    flex-basis: 50%;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--jet);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.hero-cta {
+    background-color: var(--emerald);
+    color: var(--white);
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+.hero-cta:hover {
+    background-color: #0abf63;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex-basis: 45%;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.features-section {
+    padding: 4rem 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--jet);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--emerald); /* Default icon color */
+}
+/* Specific icon colors if needed, or use SVG/image icons */
+.feature-card:nth-child(1) .feature-icon { color: var(--emerald); }
+.feature-card:nth-child(2) .feature-icon { color: var(--pumpkin); } /* Example alternate */
+.feature-card:nth-child(3) .feature-icon { color: var(--pear); }    /* Example alternate */
+.feature-card:nth-child(4) .feature-icon { color: var(--red-crayola); } /* Example alternate */
+
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--jet);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.benefits-section {
+    padding: 4rem 5%;
+    background-color: var(--light-gray);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--jet);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    color: var(--emerald);
+    padding-top: 0.2rem; /* Align icon better with text */
+}
+
+.benefit-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    color: var(--jet);
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.cta-banner-section {
+    background-color: var(--emerald);
+    color: var(--white);
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.cta-banner-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-banner-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.banner-cta {
+    background-color: var(--pear);
+    color: var(--jet);
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--pear);
+}
+
+.banner-cta:hover {
+    background-color: #c9d62f; /* Slightly darker pear */
+    border-color: #c9d62f;
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--jet);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--pear);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Simple hide for demo, implement burger menu for real app */
+    }
+    .nav-cta {
+        /* display: none; /* Or adjust for mobile */
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5%;
+    }
+    .hero-content {
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+    }
+    .hero-image {
+        flex-basis: 100%;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}

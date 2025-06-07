@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Town Labs - Integrated AI & Data Expertise</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">Little Town Labs</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#expertise">Our Expertise</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="container">
+                <h1>AI-Driven Solutions Across Education, Agent Systems & Enterprise Data</h1>
+                <p>Little Town Labs delivers specialized AI tools, powerful agent platforms, and expert data consultancy, all built on a foundation of innovation.</p>
+                <div class="hero-buttons">
+                    <a href="#expertise" class="btn btn-primary">Discover Our Expertise</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" class="expertise-section">
+            <div class="container">
+                <h2>Explore Our Core Capabilities</h2>
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="homeschoolingminds">HomeschoolingMinds</button>
+                        <button class="tab-button" data-tab="ryze">FlyteCode</button>
+                        <button class="tab-button" data-tab="analytics">Data Analytics</button>
+                    </div>
+
+                    <div class="tab-content active" id="homeschoolingminds">
+                        <div class="tab-content-inner homeschool">
+                            <div class="tab-text">
+                                <h3>HomeschoolingMinds</h3>
+                                <span class="tagline">Empowering Homeschooling Families</span>
+                                <p>AI-driven platform simplifying educational compliance, record-keeping, and guidance for homeschooling families in Texas & Alaska. Features include automated transcript tracking and AI-powered educational support.</p>
+                                <a href="#contact" class="btn btn-accent-1">Learn More</a>
+                            </div>
+                            <div class="tab-visual">
+                                <img src="https://via.placeholder.com/400x300?text=HomeschoolingMinds+Tab" alt="HomeschoolingMinds">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="ryze">
+                        <div class="tab-content-inner ryze">
+                            <div class="tab-text">
+                                <h3>FlyteCode</h3>
+                                <span class="tagline">Building Scalable AI Agent Systems</span>
+                                <p>Our foundational AI agent development system. FlyteCode offers a modular framework to build and deploy specialized AI agents, accelerating innovation for HomeschoolingMinds and our Data Analytics services.</p>
+                                <a href="#contact" class="btn btn-accent-2">Explore FlyteCode</a>
+                            </div>
+                            <div class="tab-visual">
+                                <img src="https://via.placeholder.com/400x300?text=FlyteCode+Tab" alt="FlyteCode">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="analytics">
+                        <div class="tab-content-inner analytics">
+                            <div class="tab-text">
+                                <h3>Data Analytics Consultancy</h3>
+                                <span class="tagline">Enterprise Data Solutions, AI-Powered</span>
+                                <p>Delivering efficient, enterprise-grade data infrastructure (Snowflake, dbt) and analytics (Power BI). We leverage FlyteCode AI for faster, more transparent data solutions for mid-to-large enterprises.</p>
+                                <a href="#contact" class="btn btn-accent-3">Data Solutions</a>
+                            </div>
+                            <div class="tab-visual">
+                                <img src="https://via.placeholder.com/400x300?text=Analytics+Tab" alt="Data Analytics">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-us-section alt-bg">
+            <div class="container">
+                <h2>About Little Town Labs</h2>
+                <p>We are a passionate team dedicated to leveraging artificial intelligence to solve real-world problems. Our integrated approach across educational tools, AI platforms, and data consultancy allows us to innovate rapidly and create impactful, synergistic solutions.</p>
+                 <a href="#contact" class="btn btn-secondary">Meet The Team (Coming Soon)</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Interested in how our AI expertise can benefit you? Let's connect.</p>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                     <select name="interest" required>
+                        <option value="" disabled selected>I'm interested in...</option>
+                        <option value="homeschoolingminds">HomeschoolingMinds</option>
+                        <option value="ryze">FlyteCode Platform</option>
+                        <option value="data-analytics">Data Analytics Consultancy</option>
+                        <option value="general">General Inquiry</option>
+                    </select>
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Little Town Labs. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Basic mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+
+        // Basic Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Deactivate all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Activate clicked button and corresponding content
+                button.classList.add('active');
+                const targetTab = button.getAttribute('data-tab');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

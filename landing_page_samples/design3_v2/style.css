@@ -1,0 +1,448 @@
+:root {
+    --jet: #363537;
+    --emerald: #0cce6b;
+    --pear: #dced31;
+    --red-crayola: #ef2d56; /* Primary Accent */
+    --pumpkin: #ed7d3a;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #495057;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+    /* New accent for Data Analytics, can be one of the existing or a new one if provided */
+    --data-analytics-accent: var(--pear); /* Using Pear for Data Analytics for now */
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    color: var(--jet);
+    line-height: 1.7;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.site-header {
+    background-color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--jet);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem; /* Adjusted gap for more items */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.9rem; /* Slightly smaller for more items */
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    color: var(--red-crayola);
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--jet);
+    cursor: pointer;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-family: var(--font-heading);
+    text-align: center;
+    border: 2px solid transparent;
+    font-size: 0.9rem; /* Standardized button font size */
+}
+
+.btn-primary {
+    background-color: var(--red-crayola);
+    color: var(--white);
+    border-color: var(--red-crayola);
+}
+.btn-primary:hover {
+    background-color: #d4103b; /* Darker red */
+    border-color: #d4103b;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--red-crayola);
+    border-color: var(--red-crayola);
+}
+.btn-secondary:hover {
+    background-color: var(--red-crayola);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-accent-1 { /* For HomeschoolingMinds */
+    background-color: var(--emerald);
+    color: var(--white);
+    border-color: var(--emerald);
+}
+.btn-accent-1:hover {
+    background-color: #0abf63;
+    border-color: #0abf63;
+    transform: translateY(-2px);
+}
+
+.btn-accent-2 { /* For FlyteCode */
+    background-color: var(--pumpkin);
+    color: var(--white);
+    border-color: var(--pumpkin);
+}
+.btn-accent-2:hover {
+    background-color: #d95c14;
+    border-color: #d95c14;
+    transform: translateY(-2px);
+}
+
+.btn-accent-3 { /* For Data Analytics */
+    background-color: var(--data-analytics-accent);
+    color: var(--jet); /* Jet text on Pear bg for contrast */
+    border-color: var(--data-analytics-accent);
+}
+.btn-accent-3:hover {
+    background-color: #c9d62f; /* Darker Pear */
+    border-color: #c9d62f;
+    transform: translateY(-2px);
+}
+
+
+.hero-banner {
+    background-color: var(--jet);
+    color: var(--white);
+    padding: 5rem 0; /* Adjusted padding */
+    text-align: center;
+}
+
+.hero-banner h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem; /* Adjusted size */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-banner p {
+    font-size: 1.15rem; /* Adjusted size */
+    max-width: 750px; /* Wider for more text */
+    margin: 0 auto 2.5rem auto; /* Adjusted margin */
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.hero-buttons .btn {
+    padding: 0.7rem 1.5rem; /* Slightly smaller hero buttons if many */
+    font-size: 0.85rem;
+}
+
+
+.project-showcase {
+    padding: 4rem 0; /* Adjusted padding */
+}
+
+.project-showcase .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Alternating layout for project showcases */
+.project-showcase:nth-child(even) .container { /* e.g., FlyteCode and future even sections */
+    flex-direction: row-reverse;
+}
+/* Ensure Data Analytics section also follows alternating pattern if needed, or set explicitly */
+
+
+.project-content {
+    flex-basis: 55%;
+}
+
+.project-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.3rem; /* Adjusted size */
+    color: var(--jet);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.05rem; /* Adjusted size */
+}
+
+.homeschool .tagline { color: var(--emerald); }
+.ryze .tagline { color: var(--pumpkin); }
+.analytics .tagline { color: var(--data-analytics-accent); }
+
+
+.project-content p {
+    font-size: 1rem; /* Adjusted size */
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.project-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.project-content ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.project-content ul li::before {
+    content: '✓'; /* Checkmark */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.homeschool ul li::before { color: var(--emerald); }
+.ryze ul li::before { color: var(--pumpkin); }
+.analytics ul li::before { color: var(--data-analytics-accent); }
+
+
+.project-visual {
+    flex-basis: 45%;
+}
+
+.project-visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.alt-bg {
+    background-color: var(--light-gray);
+}
+
+.about-us-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about-us-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+.about-us-section > .container > p {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.value-item {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--red-crayola);
+}
+.value-item:nth-child(2) .value-icon { color: var(--pear); }
+.value-item:nth-child(3) .value-icon { color: var(--emerald); }
+
+
+.value-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-item p {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+.contact-section {
+    padding: 4rem 0;
+}
+
+.contact-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-section > .container > p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--red-crayola);
+    box-shadow: 0 0 0 2px rgba(239, 45, 86, 0.2);
+}
+
+.contact-form button {
+    width: auto;
+    justify-self: center;
+}
+
+.site-footer-bottom {
+    background-color: var(--jet);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.site-footer-bottom p {
+    margin: 0.3rem 0;
+}
+
+.site-footer-bottom a {
+    color: var(--pear);
+    text-decoration: none;
+}
+.site-footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .project-showcase .container,
+    .project-showcase:nth-child(even) .container { /* Ensure alternating still works if needed */
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-content ul {
+        text-align: left; /* Keep list items left-aligned */
+        display: inline-block; /* Center the block of list items */
+    }
+    .project-visual {
+        margin-top: 2rem;
+        order: -1; /* Visual first on mobile for column layout */
+    }
+    .project-showcase:nth-child(even) .project-visual {
+        order: -1; /* Consistent visual first for all stacked sections */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .main-nav {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+    .main-nav.active {
+        display: block; /* Show when active */
+    }
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .hero-banner h1 {
+        font-size: 2.2rem;
+    }
+    .hero-banner p {
+        font-size: 1.05rem;
+    }
+    .project-content h2 {
+        font-size: 1.8rem;
+    }
+    .hero-buttons .btn {
+        width: calc(50% - 0.5rem); /* Two buttons per row on small screens */
+        margin-bottom: 0.5rem;
+    }
+}
