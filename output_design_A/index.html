@@ -125,12 +125,16 @@
             <div class="container">
                 <h2>Join Us</h2>
                 <p>Join us at Little Town Labs as we redefine the landscape of software solutions, empowering businesses and educational institutions with cutting-edge AI technologies.</p>
-                <form class="contact-form" action="#">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                <form method="post" action="https://sendfox.com/form/m7e5zv/1wd6o0" class="sendfox-form" id="1wd6o0" data-async="true" data-recaptcha="true">
+                <p><label for="sendfox_form_name">First Name: </label><input type="text" id="sendfox_form_name" placeholder="First Name" name="first_name" required /></p>
+                <p><label for="sendfox_form_last_name">Last Name: </label><input type="text" id="sendfox_form_last_name" placeholder="Last Name" name="last_name" required /></p>
+                <p><label for="sendfox_form_email">Email: </label><input type="email" id="sendfox_form_email" placeholder="Email" name="email" required /></p>
+                <p><label><input type="checkbox" name="gdpr" value="1" required /> I agree to receive email updates and promotions.</label></p>
+                <!-- no botz please -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
+                <p><button type="submit" class="btn btn-primary">Submit</button></p>
                 </form>
+                <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8"></script>
             </div>
         </section>
     </main>
