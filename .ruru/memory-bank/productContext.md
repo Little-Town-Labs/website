@@ -4,8 +4,8 @@
 
 Little Town Labs exists to:
 1.  **Empower Homeschooling Families:** Provide AI-driven tools (HomeschoolingMinds) that simplify educational compliance, record-keeping, and offer intelligent guidance, addressing the unique challenges faced by the homeschooling community.
-2.  **Advance AI Agent Technology:** Develop a robust and scalable AI agent development system (FlyteCode) to accelerate the creation of specialized AI solutions, not only for our internal projects but for broader market applications.
-3.  **Deliver High-Value Data Solutions:** Offer enterprise-grade data analytics consultancy services, leveraging modern tooling (Snowflake, dbt, Power BI) and AI-assisted development (via FlyteCode) to provide efficient and powerful data infrastructure and insights to mid-to-large businesses.
+2.  **Advance AI Agent Technology:** Develop a robust and scalable AI agent development system (AeroCode) to accelerate the creation of specialized AI solutions, not only for our internal projects but for broader market applications.
+3.  **Deliver High-Value Data Solutions:** Offer enterprise-grade data analytics consultancy services, leveraging modern tooling (Snowflake, dbt, Power BI) and AI-assisted development (via AeroCode) to provide efficient and powerful data infrastructure and insights to mid-to-large businesses.
 
 The overarching goal is to create innovative, intelligent software solutions that solve specific problems while building reusable, scalable AI frameworks.
 
@@ -17,7 +17,7 @@ The overarching goal is to create innovative, intelligent software solutions tha
 *   Need for personalized educational guidance and resource discovery.
 *   Difficulty in creating comprehensive, compliant transcripts for college or future endeavors.
 
-**For FlyteCode Users (Developers, Internal Teams, Future Clients):**
+**For AeroCode Users (Developers, Internal Teams, Future Clients):**
 *   Slow development cycles for specialized AI agents.
 *   Lack of reusable components for common AI tasks.
 *   Difficulty in scaling AI agent systems.
@@ -38,7 +38,7 @@ The overarching goal is to create innovative, intelligent software solutions tha
 *   Generates compliant transcripts and reports.
 *   Integrates with relevant third-party services (e.g., HSLDA planned).
 
-**FlyteCode AI Agent Development System:**
+**AeroCode AI Agent Development System:**
 *   A foundational framework with modular components for building AI agents.
 *   Provides tools and standardized patterns for agent specialization, deployment, and management.
 *   Enables rapid prototyping and iteration of AI functionalities.
@@ -46,7 +46,7 @@ The overarching goal is to create innovative, intelligent software solutions tha
 
 **Data Analytics Consultancy:**
 *   **Engagement:** Begins with requirements gathering and assessment of the client's data landscape.
-*   **Design & Implementation:** Custom data solutions are designed using a standardized stack (Snowflake, dbt, Power BI), with FlyteCode AI assisting in code generation, automation, and initial model prototyping.
+*   **Design & Implementation:** Custom data solutions are designed using a standardized stack (Snowflake, dbt, Power BI), with AeroCode AI assisting in code generation, automation, and initial model prototyping.
 *   **Delivery:** Iterative development with human oversight, automated testing, and transparent, documented processes.
 *   **Support:** Ongoing retainer-based support for maintenance, enhancements, and ensuring data reliability.
 
@@ -58,7 +58,7 @@ The overarching goal is to create innovative, intelligent software solutions tha
 *   **Trustworthy & Reliable:** Provides accurate compliance information and secure data management.
 *   **Empowering:** Gives users confidence in their homeschooling journey and their child's academic record.
 
-**FlyteCode (Developer Experience - DX):**
+**AeroCode (Developer Experience - DX):**
 *   **Developer-Friendly:** Clear documentation, intuitive APIs, and easy-to-use tools.
 *   **Flexible & Extensible:** Allows for easy customization and integration of new agent capabilities.
 *   **Efficient:** Accelerates the AI development lifecycle.

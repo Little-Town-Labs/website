@@ -125,7 +125,7 @@ body {
     transform: translateY(-2px);
 }
 
-.btn-accent-2 { /* For FlyteCode */
+.btn-accent-2 { /* For AeroCode */
     background-color: var(--pumpkin);
     color: var(--white);
     border-color: var(--pumpkin);

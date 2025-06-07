@@ -128,7 +128,7 @@ body {
     transform: translateY(-2px);
 }
 
-.btn-accent-2 { /* For FlyteCode */
+.btn-accent-2 { /* For AeroCode */
     background-color: var(--pumpkin);
     color: var(--white);
     border-color: var(--pumpkin);
@@ -196,7 +196,7 @@ body {
 }
 
 /* Alternating layout for project showcases */
-.project-showcase:nth-child(even) .container { /* e.g., FlyteCode and future even sections */
+.project-showcase:nth-child(even) .container { /* e.g., AeroCode and future even sections */
     flex-direction: row-reverse;
 }
 /* Ensure Data Analytics section also follows alternating pattern if needed, or set explicitly */

@@ -3,7 +3,7 @@
     --emerald: #0cce6b; /* HomeschoolingMinds accent */
     --pear: #dced31;    /* Data Analytics accent */
     --red-crayola: #ef2d56; /* Primary LTL Accent */
-    --pumpkin: #ed7d3a; /* FlyteCode accent */
+    --pumpkin: #ed7d3a; /* AeroCode accent */
     --white: #ffffff;
     --light-gray: #f8f9fa;
     --medium-gray: #e9ecef;
@@ -213,7 +213,7 @@ body {
     align-items: center;
     gap: 3rem;
 }
-.project-feature:nth-child(odd) .container { /* FlyteCode is odd in this layout */
+.project-feature:nth-child(odd) .container { /* AeroCode is odd in this layout */
     flex-direction: row-reverse;
 }
 

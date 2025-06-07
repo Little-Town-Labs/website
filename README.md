@@ -9,7 +9,7 @@ Little Town Labs is a software development business focused on building AI-power
 ## Services
 
 *   **HomeschoolingMinds:** An educational compliance platform.
-*   **FlyteCode:** An AI agent development system.
+*   **AeroCode:** An AI agent development system.
 *   **Data Analytics Consultancy:** Enterprise data solutions.
 
 ## Deployment

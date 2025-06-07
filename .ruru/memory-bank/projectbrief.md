@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-Little Town Labs is a software development business focused on building AI-powered solutions for the homeschooling community, developing scalable AI agent systems, and offering data analytics consultancy services. The company operates with three primary strategic initiatives: HomeschoolingMinds (educational compliance platform), FlyteCode (AI agent development system), and a Data Analytics Consultancy leveraging FlyteCode.
+Little Town Labs is a software development business focused on building AI-powered solutions for the homeschooling community, developing scalable AI agent systems, and offering data analytics consultancy services. The company operates with three primary strategic initiatives: HomeschoolingMinds (educational compliance platform), AeroCode (AI agent development system), and a Data Analytics Consultancy leveraging AeroCode.
 
 ## Vision & Mission
 
@@ -33,7 +33,7 @@ Little Town Labs is a software development business focused on building AI-power
 - Build technical infrastructure foundation
 - Develop compliance expertise and automation
 
-### 2. FlyteCode - AI Agent Development System
+### 2. AeroCode - AI Agent Development System
 **Status**: Foundation & Architecture Phase
 
 **Development Priorities**:
@@ -43,7 +43,7 @@ Little Town Labs is a software development business focused on building AI-power
 - Agent specialization framework development
 
 **Strategic Integration**:
-- Use FlyteCode platform to accelerate HomeschoolingMinds development
+- Use AeroCode platform to accelerate HomeschoolingMinds development
 - Create reusable components for future projects
 - Establish technical standards and patterns
 
@@ -59,22 +59,22 @@ Little Town Labs is a software development business focused on building AI-power
 **Core Value Proposition**:
 - Efficient delivery of enterprise data capabilities
 - Replaces need for large in-house data teams
-- Leverages FlyteCode AI for automation and code generation
+- Leverages AeroCode AI for automation and code generation
 
 **Strategic Objectives**:
 - Develop case studies with dbt and Snowflake
-- Build templated approaches and AI integration patterns with FlyteCode
+- Build templated approaches and AI integration patterns with AeroCode
 - Secure initial client engagements for proof of concept
 - Achieve $30k-50k MRR with 3-5 clients
 
 ## Resource Allocation Strategy
 
 **Primary Focus (70%)**: HomeschoolingMinds MVP and market validation
-**Secondary Focus (30%)**: FlyteCode foundation and framework development
+**Secondary Focus (30%)**: AeroCode foundation and framework development
 
 **Key Coordination Tasks**:
 - Balance development resources between projects
-- Leverage FlyteCode development to support HomeschoolingMinds features
+- Leverage AeroCode development to support HomeschoolingMinds features
 - Maintain technical documentation and patterns
 - Partnership development and market validation
 
@@ -103,7 +103,7 @@ Little Town Labs is a software development business focused on building AI-power
 - HSLDA partnership establishment
 - Revenue generation milestones
 
-**FlyteCode**:
+**AeroCode**:
 - Framework completion and documentation
 - Successful integration with HomeschoolingMinds
 - Reusability and scalability validation
@@ -113,7 +113,7 @@ Little Town Labs is a software development business focused on building AI-power
 - Client retention and satisfaction
 - Speed of delivery (requirements to production)
 - Data accuracy and system uptime
-- Number of concurrent clients manageable with FlyteCode AI assistance
+- Number of concurrent clients manageable with AeroCode AI assistance
 - Successful completion of dbt/Snowflake case studies
 
 ## Timeline & Milestones
@@ -127,12 +127,12 @@ Little Town Labs is a software development business focused on building AI-power
 **Phase 2**: Market Expansion & Platform Maturation
 - Multi-state rollout
 - Feature enhancement based on user feedback
-- FlyteCode platform completion
+- AeroCode platform completion
 - Revenue model optimization
 
 **Data Analytics Consultancy Development Plan**:
 - **Phase 1**: Complete dbt and Snowflake case studies to refine workflow.
-- **Phase 2**: Build templated approaches and AI integration patterns (leveraging FlyteCode).
+- **Phase 2**: Build templated approaches and AI integration patterns (leveraging AeroCode).
 - **Phase 3**: Develop first client engagement and proof of concept.
 - **Phase 4**: Scale to multiple clients with refined processes.
 
@@ -160,10 +160,10 @@ Little Town Labs is a software development business focused on building AI-power
 1. Complete Transcript Tracker launch preparation
 2. Finalize landing page and marketing materials
 3. Establish TeamPal integration workflows
-4. Document FlyteCode architecture and development standards
+4. Document AeroCode architecture and development standards
 5. Initiate HSLDA partnership discussions
 6. Begin development of dbt and Snowflake case studies for Data Analytics Consultancy
-7. Outline AI integration patterns for FlyteCode within the consultancy workflow
+7. Outline AI integration patterns for AeroCode within the consultancy workflow
 
 ---
 

@@ -21,7 +21,7 @@ Automated ETL/ELT pipeline development
 Custom business intelligence dashboards
 
 Competitive Edge: Delivering solutions 10x faster through AI-enhanced development, ensuring transparency and scalability.
-3. AI Agent Development - FlyteCode Platform
+3. AI Agent Development - AeroCode Platform
 We specialize in scalable AI agent frameworks, offering:
 
 Custom AI agent development
@@ -47,7 +47,7 @@ Revenue Streams:
 
 HomeschoolingMinds: Subscription-based SaaS
 Data Analytics: Retainer contracts
-FlyteCode Platform: Custom development and licensing
+AeroCode Platform: Custom development and licensing
 
 Success Metrics:
 

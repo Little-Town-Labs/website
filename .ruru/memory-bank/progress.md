@@ -18,7 +18,7 @@
     *   Background images added to hero and "Our Approach" sections of `output_design_A`.
     *   Alternative designs (`output_design_B`, `output_design_C`) archived in `archived_designs/`.
 *   **Project Name Update & CSS Fix (as of 2025-06-05):**
-    *   Project name "Ryze" changed to "FlyteCode" across all core memory bank files and relevant project files.
+    *   Project name "Ryze" changed to "AeroCode" across all core memory bank files and relevant project files.
     *   Empty CSS rulesets removed from `landing_page_samples/design3_v2/style.css`.
 
 ## What's Left to Build / Upcoming Features
@@ -33,7 +33,7 @@
 *   TeamPal setup and integration.
 *   Core development of AI agents, compliance research, social media automation, and HSLDA partnership.
 
-**FlyteCode AI Agent Development System:**
+**AeroCode AI Agent Development System:**
 *   Architecture definition and documentation.
 *   Market research and competitive analysis.
 *   MVP framework building.
@@ -41,7 +41,7 @@
 
 **Data Analytics Consultancy:**
 *   Complete dbt and Snowflake case studies.
-*   Build templated approaches and AI integration patterns with FlyteCode.
+*   Build templated approaches and AI integration patterns with AeroCode.
 *   Develop first client engagement and proof of concept.
 *   Refine service delivery model and scale to target client numbers.
 
@@ -51,7 +51,7 @@
 *   **Documentation:** Core Memory Bank documents have been established and updated to reflect this expansion.
 *   **Web Presence (as of 2025-06-05):** Landing page design `output_design_A` finalized and updated with background images. Alternative designs archived. Awaiting final content review and potential deployment.
 *   **HomeschoolingMinds:** In Phase 1 MVP Development.
-*   **FlyteCode:** In Foundation & Architecture Phase.
+*   **AeroCode:** In Foundation & Architecture Phase.
 *   **Data Analytics Consultancy:** In Initial Development & Case Study Phase.
 
 ## Known Issues & Bugs
@@ -62,16 +62,16 @@
 ## Evolution of Project Decisions (Key Changes)
 
 *   **2025-06-04:**
-    *   **Introduction of Data Analytics Consultancy:** Little Town Labs' scope expanded to include a third core service offering focused on enterprise data analytics, leveraging FlyteCode for AI assistance.
+    *   **Introduction of Data Analytics Consultancy:** Little Town Labs' scope expanded to include a third core service offering focused on enterprise data analytics, leveraging AeroCode for AI assistance.
     *   **Memory Bank Update:** All core Memory Bank files updated to reflect the new consultancy service.
     *   **Landing Page Direction:** Decision made to iterate on "Design 3". Three variations (`design3_v2`, `design3_v3`, `design3_v4`) created to showcase all three services.
 *   **2025-06-05:**
     *   **Landing Page Finalization:** `output_design_A` selected. Background images added to hero and "Our Approach" sections. Other designs (`output_design_B`, `output_design_C`) archived.
-    *   **Project Name Update & CSS Fix:** Project name "Ryze" changed to "FlyteCode" across memory bank and project files. CSS warnings in `landing_page_samples/design3_v2/style.css` resolved.
+    *   **Project Name Update & CSS Fix:** Project name "Ryze" changed to "AeroCode" across memory bank and project files. CSS warnings in `landing_page_samples/design3_v2/style.css` resolved.
     *   Memory bank files (`activeContext.md`, `progress.md`) updated to reflect these changes.
 *   **Initial Project Setup:**
     *   Decision to use Roo Code, VS Code, Boomerang Tasks, Linear.app, Desktop Commander, and MCP integrations for the development environment.
-    *   Initial focus on HomeschoolingMinds (TX & AK) and foundational FlyteCode development.
+    *   Initial focus on HomeschoolingMinds (TX & AK) and foundational AeroCode development.
 
 ---
 
