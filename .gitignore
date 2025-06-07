@@ -42,3 +42,5 @@ Desktop.ini
 
 # Documentation
 *.md
+!README.md
+!sendfox_landing_page_content.md
