@@ -1,0 +1,6 @@
+[build]
+  # This is the directory to publish from, relative to the base of your repository.
+  # For this project, it seems the main site is in output_design_A/
+  publish = "output_design_A/"
+
+# You can add more build settings, redirects, headers, etc., here later if needed.
