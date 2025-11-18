@@ -65,21 +65,11 @@ body {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.6rem; /* Adjusted for uppercase */
-    font-weight: 700;
-    color: var(--light-text-color);
-    text-decoration: none;
     display: flex;
     align-items: center;
-    letter-spacing: 1px;
-}
-.logo span {
-    margin-left: 10px;
 }
 .header-logo-main {
-    height: 35px;
-    margin-right: 5px; /* Reduced margin */
+    height: 45px;
     filter: drop-shadow(0 0 5px var(--secondary-color));
 }
 
