@@ -1,33 +1,33 @@
 - Tailwind
 
-{ 'jet': { DEFAULT: '#363537', 100: '#0b0a0b', 200: '#151516', 300: '#201f21', 400: '#2b2a2c', 500: '#363537', 600: '#5e5c60', 700: '#868489', 800: '#aeadb0', 900: '#d7d6d8' }, 'emerald': { DEFAULT: '#0cce6b', 100: '#022915', 200: '#05532b', 300: '#077c40', 400: '#0aa655', 500: '#0cce6b', 600: '#23f287', 700: '#5af5a5', 800: '#91f9c3', 900: '#c8fce1' }, 'pear': { DEFAULT: '#dced31', 100: '#313505', 200: '#616909', 300: '#929e0e', 400: '#c2d212', 500: '#dced31', 600: '#e4f15a', 700: '#ebf483', 800: '#f2f8ac', 900: '#f8fbd6' }, 'red_(crayola)': { DEFAULT: '#ef2d56', 100: '#35040f', 200: '#6a081d', 300: '#9f0c2c', 400: '#d4103b', 500: '#ef2d56', 600: '#f25879', 700: '#f6829b', 800: '#f9acbc', 900: '#fcd5de' }, 'pumpkin': { DEFAULT: '#ed7d3a', 100: '#361705', 200: '#6c2e0a', 300: '#a2450f', 400: '#d95c14', 500: '#ed7d3a', 600: '#f09662', 700: '#f4b189', 800: '#f8cbb1', 900: '#fbe5d8' } }
+{ 'tiger’s_eye': { DEFAULT: '#b1740f', 100: '#241703', 200: '#472e06', 300: '#6b4609', 400: '#8f5d0c', 500: '#b1740f', 600: '#eb9916', 700: '#f0b350', 800: '#f5cc8b', 900: '#fae6c5' }, 'jasmine': { DEFAULT: '#ffd07b', 100: '#4b3100', 200: '#976200', 300: '#e29300', 400: '#ffb62f', 500: '#ffd07b', 600: '#ffda95', 700: '#ffe3af', 800: '#ffecca', 900: '#fff6e4' }, 'xanthous': { DEFAULT: '#fdb833', 100: '#3d2901', 200: '#795101', 300: '#b67a02', 400: '#f2a202', 500: '#fdb833', 600: '#fdc85d', 700: '#fed686', 800: '#fee4ae', 900: '#fff1d7' }, 'bleu_de_france': { DEFAULT: '#1789fc', 100: '#011c36', 200: '#02376d', 300: '#0253a3', 400: '#036ed9', 500: '#1789fc', 600: '#46a1fc', 700: '#74b9fd', 800: '#a3d0fe', 900: '#d1e8fe' }, 'indigo': { DEFAULT: '#44158f', 100: '#0e041c', 200: '#1b0839', 300: '#290d55', 400: '#361172', 500: '#44158f', 600: '#601eca', 700: '#854ae4', 800: '#ae86ed', 900: '#d6c3f6' } }
 
 - CSV
 
-363537,0cce6b,dced31,ef2d56,ed7d3a
+b1740f,ffd07b,fdb833,1789fc,44158f
 
 - With #
 
-#363537, #0cce6b, #dced31, #ef2d56, #ed7d3a
+#b1740f, #ffd07b, #fdb833, #1789fc, #44158f
 
 - Array
 
-["363537","0cce6b","dced31","ef2d56","ed7d3a"]
+["b1740f","ffd07b","fdb833","1789fc","44158f"]
 
 - Object
 
-{"Jet":"363537","Emerald":"0cce6b","Pear":"dced31","Red (Crayola)":"ef2d56","Pumpkin":"ed7d3a"}
+{"Tiger’s Eye":"b1740f","Jasmine":"ffd07b","Xanthous":"fdb833","Bleu de France":"1789fc","Indigo":"44158f"}
 
 - Extended Array
 
-[{"name":"Jet","hex":"363537","rgb":[54,53,55],"cmyk":[2,4,0,78],"hsb":[270,4,22],"hsl":[270,2,21],"lab":[22,1,-1]},{"name":"Emerald","hex":"0cce6b","rgb":[12,206,107],"cmyk":[94,0,48,19],"hsb":[149,94,81],"hsl":[149,89,43],"lab":[73,-64,37]},{"name":"Pear","hex":"dced31","rgb":[220,237,49],"cmyk":[7,0,79,7],"hsb":[65,79,93],"hsl":[65,84,56],"lab":[90,-27,81]},{"name":"Red (Crayola)","hex":"ef2d56","rgb":[239,45,86],"cmyk":[0,81,64,6],"hsb":[347,81,94],"hsl":[347,86,56],"lab":[53,72,26]},{"name":"Pumpkin","hex":"ed7d3a","rgb":[237,125,58],"cmyk":[0,47,76,7],"hsb":[22,76,93],"hsl":[22,83,58],"lab":[64,38,54]}]
+[{"name":"Tiger’s Eye","hex":"b1740f","rgb":[177,116,15],"cmyk":[0,34,92,31],"hsb":[37,92,69],"hsl":[37,84,38],"lab":[54,17,58]},{"name":"Jasmine","hex":"ffd07b","rgb":[255,208,123],"cmyk":[0,18,52,0],"hsb":[39,52,100],"hsl":[39,100,74],"lab":[86,7,48]},{"name":"Xanthous","hex":"fdb833","rgb":[253,184,51],"cmyk":[0,27,80,1],"hsb":[40,80,99],"hsl":[40,98,60],"lab":[79,14,72]},{"name":"Bleu de France","hex":"1789fc","rgb":[23,137,252],"cmyk":[91,46,0,1],"hsb":[210,91,99],"hsl":[210,97,54],"lab":[57,13,-65]},{"name":"Indigo","hex":"44158f","rgb":[68,21,143],"cmyk":[52,85,0,44],"hsb":[263,85,56],"hsl":[263,74,32],"lab":[23,48,-58]}]
 
 - XML
 
 <palette>
-  <color name="Jet" hex="363537" r="54" g="53" b="55" />
-  <color name="Emerald" hex="0cce6b" r="12" g="206" b="107" />
-  <color name="Pear" hex="dced31" r="220" g="237" b="49" />
-  <color name="Red (Crayola)" hex="ef2d56" r="239" g="45" b="86" />
-  <color name="Pumpkin" hex="ed7d3a" r="237" g="125" b="58" />
+  <color name="Tiger’s Eye" hex="b1740f" r="177" g="116" b="15" />
+  <color name="Jasmine" hex="ffd07b" r="255" g="208" b="123" />
+  <color name="Xanthous" hex="fdb833" r="253" g="184" b="51" />
+  <color name="Bleu de France" hex="1789fc" r="23" g="137" b="252" />
+  <color name="Indigo" hex="44158f" r="68" g="21" b="143" />
 </palette>

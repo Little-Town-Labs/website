@@ -1,0 +1,502 @@
+:root {
+    --primary-color: #1789fc; /* Bleu de France */
+    --secondary-color: #44158f; /* Indigo */
+    --accent-color: #fdb833; /* Xanthous */
+    --text-color: #2c3e50; /* Dark Slate Gray for body text */
+    --light-text-color: #ffffff;
+    --background-color: #ffffff;
+    --light-gray-bg: #f0f4f8; /* Lighter blue-gray */
+    --dark-bg-contrast: #0d2c4a; /* Darker shade of Bleu de France for contrast sections */
+    --border-color: #a3d0fe; /* Lighter Bleu de France for borders */
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --container-width: 1100px;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.7;
+    background-color: var(--background-color);
+    font-size: 16px;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--secondary-color); /* Indigo for logo text */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo-small {
+    height: 35px;
+    margin-right: 8px;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color); /* Indigo for nav links */
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    color: var(--primary-color); /* Bleu de France on hover */
+    border-bottom-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px; /* Rounded buttons */
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-family: var(--font-heading);
+    text-align: center;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color); /* Xanthous for primary CTA */
+    color: var(--secondary-color); /* Indigo text on Xanthous */
+    border-color: var(--accent-color);
+    box-shadow: 0 3px 8px rgba(253, 184, 51, 0.3);
+}
+.btn-primary:hover {
+    background-color: #e29300; /* Darker Xanthous */
+    border-color: #e29300;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 12px rgba(226, 147, 0, 0.4);
+    color: var(--secondary-color);
+}
+
+/* Hero Banner */
+.hero-banner {
+    background-color: var(--primary-color); /* Bleu de France */
+    color: var(--light-text-color);
+    padding: 0; /* Remove padding to let image fill */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure image doesn't break layout */
+    min-height: 80vh; /* Ensure hero is tall enough */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-cover-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area */
+    opacity: 0.15; /* Subtle background image */
+}
+
+.hero-content {
+    position: relative; /* To sit above the background image */
+    z-index: 1;
+    padding: 4rem 1.5rem;
+}
+
+.hero-banner h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem; /* Larger heading */
+    font-weight: 900; /* Bolder */
+    margin-bottom: 0.75rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero-banner .subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--light-text-color);
+    opacity: 0.9;
+}
+
+.hero-banner .hero-description {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+/* Vision & Mission Section */
+.vision-mission-section {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: var(--light-gray-bg);
+}
+.vision-mission-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color); /* Indigo */
+}
+.vision-mission-content {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    text-align: left;
+}
+.vision-item, .mission-item {
+    flex-basis: 45%;
+    background-color: var(--background-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-color); /* Bleu de France accent */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+.vision-item h3, .mission-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Services Section */
+.services-section {
+    padding: 5rem 0;
+}
+.services-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color); /* Indigo */
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+.service-card {
+    background-color: var(--background-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(68, 21, 143, 0.1); /* Indigo shadow */
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(68, 21, 143, 0.15);
+}
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-color); /* Bleu de France for icons */
+    margin-bottom: 1.5rem;
+}
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color); /* Indigo */
+}
+.service-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.service-card .value-prop {
+    display: block;
+    font-size: 0.95rem;
+    font-style: normal;
+    color: var(--accent-color); /* Xanthous for value prop */
+    font-weight: 700;
+    margin-top: auto;
+}
+
+/* Approach Section */
+.approach-section {
+    padding: 5rem 0;
+    background-color: var(--dark-bg-contrast); /* Darker Bleu de France */
+    color: var(--light-text-color);
+}
+
+.approach-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.approach-section .section-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+.approach-section ul {
+    list-style: none;
+    padding: 0;
+    max-width: 650px;
+    margin: 0 auto;
+}
+.approach-section ul li {
+    background-color: rgba(255,255,255, 0.1); /* Semi-transparent light background */
+    padding: 1.2rem 1.8rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-color); /* Xanthous accent */
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease;
+}
+.approach-section ul li:hover {
+    background-color: rgba(255,255,255, 0.15);
+}
+
+/* Market Section */
+.market-section {
+    padding: 5rem 0;
+    background-color: var(--light-gray-bg);
+}
+.market-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color); /* Indigo */
+}
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+}
+.market-item {
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+.market-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--primary-color); /* Bleu de France */
+    margin-bottom: 0.75rem;
+}
+
+/* Founder Section */
+.founder-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--background-color);
+}
+.founder-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color); /* Indigo */
+}
+.founder-section p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 0;
+    background-color: var(--secondary-color); /* Indigo background */
+    color: var(--light-text-color);
+}
+.contact-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.contact-section > .container > p {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+.sendfox-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.sendfox-form p {
+    margin-bottom: 1.2rem;
+}
+.sendfox-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.sendfox-form input[type="text"],
+.sendfox-form input[type="email"] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--primary-color); /* Bleu de France border */
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,0.9);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.sendfox-form input[type="text"]::placeholder,
+.sendfox-form input[type="email"]::placeholder {
+    color: #777;
+}
+.sendfox-form input[type="text"]:focus,
+.sendfox-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--accent-color); /* Xanthous focus */
+    box-shadow: 0 0 0 3px rgba(253, 184, 51, 0.3);
+}
+.sendfox-form input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.1);
+}
+.sendfox-form button.btn-primary {
+    background-color: var(--accent-color); /* Xanthous */
+    color: var(--secondary-color); /* Indigo text */
+    border-color: var(--accent-color);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+.sendfox-form button.btn-primary:hover {
+    background-color: #e29300; /* Darker Xanthous */
+    border-color: #e29300;
+    color: var(--secondary-color);
+}
+
+
+/* Footer */
+.site-footer-bottom {
+    background-color: var(--dark-bg-contrast); /* Darker Bleu de France */
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.95rem;
+}
+.site-footer-bottom p { margin: 0.5rem 0; opacity: 0.85; }
+
+.alt-bg {
+    background-color: var(--light-gray-bg);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .vision-mission-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .hero-banner h1 { font-size: 2.8rem; }
+    .hero-banner .subtitle { font-size: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 15px; }
+    .menu-toggle { display: block; }
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+    .main-nav.active { display: block; }
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    .hero-banner { min-height: 70vh; }
+    .hero-banner h1 { font-size: 2.5rem; }
+    .hero-banner .subtitle { font-size: 1.4rem; }
+    .hero-banner .hero-description { font-size: 1.1rem; }
+    
+    .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .market-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+    .vision-item, .mission-item {
+        padding: 2rem;
+    }
+    .vision-item h3, .mission-item h3 {
+        font-size: 1.4rem;
+    }
+    .service-card { padding: 2rem; }
+    .approach-section ul li { padding: 1rem 1.5rem; }
+    .contact-section > .container > p { font-size: 1.1rem; }
+}
