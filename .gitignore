@@ -36,6 +36,12 @@ Desktop.ini
 *.sln
 *.sw?
 
+# AI/Tool directories
+.ruru/
+.roo/
+.docs/
+.roomodes
+
 # Temporary files
 *.tmp
 *.temp
