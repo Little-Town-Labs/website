@@ -42,6 +42,9 @@ Desktop.ini
 .docs/
 .roomodes
 
+# Documentation folder
+docs/
+
 # Temporary files
 *.tmp
 *.temp
