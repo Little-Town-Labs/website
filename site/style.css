@@ -510,13 +510,15 @@ body {
     line-height: 1.8;
 }
 
-.solution-features {
+.solution-features,
+.product-features {
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
 }
 
-.solution-features li {
+.solution-features li,
+.product-features li {
     padding: 0.75rem 0 0.75rem 2rem;
     font-size: 0.9rem;
     position: relative;
@@ -524,7 +526,8 @@ body {
     transition: color 0.3s ease;
 }
 
-.solution-features li::before {
+.solution-features li::before,
+.product-features li::before {
     content: '▸';
     color: var(--accent-color);
     position: absolute;
@@ -534,11 +537,13 @@ body {
     transition: transform 0.3s ease;
 }
 
-.solution-features li:hover {
+.solution-features li:hover,
+.product-features li:hover {
     color: var(--light-text-color);
 }
 
-.solution-features li:hover::before {
+.solution-features li:hover::before,
+.product-features li:hover::before {
     transform: translateX(4px);
 }
 
