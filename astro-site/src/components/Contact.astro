@@ -1,12 +1,19 @@
 ---
 import ContactForm from './ContactForm.astro';
 import { contact } from '../data/site';
+
+interface Props {
+  /** Render the title as the page's H1 (standalone /contact route). */
+  asH1?: boolean;
+}
+const { asH1 = false } = Astro.props;
+const Heading = asH1 ? 'h1' : 'h2';
 ---
 
 <section id="contact" class="alt">
   <div class="container section grid">
     <div class="copy">
-      <h2 class="h2">{contact.title}</h2>
+      <Heading class="h2">{contact.title}</Heading>
       <p>{contact.body}</p>
     </div>
     <ContactForm />
