@@ -1,0 +1,156 @@
+---
+import { contact } from '../data/site';
+// Endpoint is chosen at build time. Unset means the form reports a clear error instead of failing silently.
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
+---
+
+<form id="contact-form" novalidate data-endpoint={endpoint}>
+  <div class="two">
+    <div class="field">
+      <label for="cf-name">Name</label>
+      <input id="cf-name" type="text" name="name" autocomplete="name" required aria-describedby="cf-name-err" />
+      <p class="err" id="cf-name-err" hidden></p>
+    </div>
+    <div class="field">
+      <label for="cf-email">Work email</label>
+      <input id="cf-email" type="email" name="email" autocomplete="email" required aria-describedby="cf-email-err" />
+      <p class="err" id="cf-email-err" hidden></p>
+    </div>
+  </div>
+  <div class="field">
+    <label for="cf-org">Organization</label>
+    <input id="cf-org" type="text" name="org" autocomplete="organization" required aria-describedby="cf-org-err" />
+    <p class="err" id="cf-org-err" hidden></p>
+  </div>
+  <div class="field">
+    <label for="cf-industry">Industry</label>
+    <select id="cf-industry" name="industry">
+      {contact.industries.map((i) => <option value={i}>{i}</option>)}
+    </select>
+  </div>
+  <div class="field">
+    <label for="cf-message">What are you trying to solve?</label>
+    <textarea id="cf-message" name="message" rows="4" required aria-describedby="cf-message-err"></textarea>
+    <p class="err" id="cf-message-err" hidden></p>
+  </div>
+
+  <!-- Honeypot: hidden from people, tempting to bots. -->
+  <div class="hp" aria-hidden="true">
+    <label for="cf-website">Leave this field empty</label>
+    <input id="cf-website" type="text" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <p class="phi">{contact.phiNote}</p>
+  <button class="btn btn-primary" type="submit">Send message</button>
+  <p class="status" id="cf-status" role="status" aria-live="polite" tabindex="-1"></p>
+</form>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    padding: 32px;
+  }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-weight: 500; font-size: 14px; }
+  input, select, textarea {
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--field-border);
+    border-radius: var(--radius-btn);
+    font: inherit;
+    font-weight: 400;
+    background: #fff;
+    color: var(--ink);
+  }
+  textarea { padding: 12px; min-height: 120px; }
+  input[aria-invalid='true'], textarea[aria-invalid='true'] { border-color: #a4262c; }
+  .err { color: #a4262c; font-size: 14px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .phi { font-size: 14px; color: var(--text-muted); }
+  .status { font-weight: 500; }
+  .status.ok { color: var(--accent); }
+  .status.fail { color: #a4262c; }
+  .btn:disabled { opacity: 0.7; cursor: progress; }
+  @media (max-width: 767px) { form { padding: 24px; } }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('cf-status');
+
+  if (form && status) {
+    const rules: Record<string, (v: string) => string> = {
+      name: (v) => (v ? '' : 'Please enter your name.'),
+      email: (v) => (!v ? 'Please enter your work email.' : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Please enter a valid email address.'),
+      org: (v) => (v ? '' : 'Please enter your organization.'),
+      message: (v) => (v ? '' : 'Please tell us what you are trying to solve.'),
+    };
+
+    const check = (name: string) => {
+      const input = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement;
+      const err = document.getElementById(`cf-${name}-err`)!;
+      const msg = rules[name](input.value.trim());
+      err.textContent = msg;
+      err.hidden = !msg;
+      input.setAttribute('aria-invalid', String(Boolean(msg)));
+      return msg === '';
+    };
+
+    const setStatus = (text: string, kind: 'ok' | 'fail') => {
+      status.textContent = text;
+      status.className = `status ${kind}`;
+      status.focus();
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = '';
+      const valid = Object.keys(rules).map(check);
+      if (valid.includes(false)) {
+        (form.querySelector('[aria-invalid="true"]') as HTMLElement | null)?.focus();
+        return;
+      }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      if (data.website) {
+        // Honeypot filled: pretend success.
+        setStatus('Thanks. We will reply within one business day.', 'ok');
+        form.reset();
+        return;
+      }
+
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) {
+        setStatus('The form is not connected yet. Please try again later.', 'fail');
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      btn.disabled = true;
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        setStatus('Thanks. We will reply within one business day.', 'ok');
+        form.reset();
+      } catch {
+        setStatus('Something went wrong sending your message. Please try again.', 'fail');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    form.addEventListener('blur', (e) => {
+      const t = e.target as HTMLInputElement;
+      if (t.name in rules && t.getAttribute('aria-invalid') === 'true') check(t.name);
+    }, true);
+  }
+</script>

@@ -1,0 +1,34 @@
+---
+import { process, processTitle } from '../data/site';
+---
+
+<section class="section">
+  <div class="container wrap">
+    <h2 class="h2">{processTitle}</h2>
+    <ol class="grid">
+      {process.map((s) => (
+        <li>
+          <p class="tag">{s.tag}</p>
+          <h3>{s.title}</h3>
+          <p class="body">{s.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .wrap { display: flex; flex-direction: column; gap: 40px; }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 24px;
+  }
+  li { display: flex; flex-direction: column; gap: 10px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .tag { font-family: var(--font-mono); color: var(--accent); font-size: 14px; text-transform: uppercase; }
+  h3 { font-size: 22px; }
+  .body { color: var(--text-muted); }
+</style>

@@ -1,0 +1,46 @@
+---
+import { industries, industriesIntro } from '../data/site';
+---
+
+<section id="industries" class="alt">
+  <div class="container section wrap">
+    <div class="intro">
+      <p class="eyebrow">{industriesIntro.eyebrow}</p>
+      <h2 class="h2">{industriesIntro.title}</h2>
+    </div>
+    <div class="grid">
+      {industries.map((i) => (
+        <article>
+          <h3>{i.title}</h3>
+          <p>{i.body}</p>
+          <ul class="bullets">{i.bullets.map((b) => <li>{b}</li>)}</ul>
+          <a class="more" href={i.link.href}>{i.link.label} <span aria-hidden="true">→</span></a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .alt { background: var(--ground-alt); }
+  .wrap { display: flex; flex-direction: column; gap: 48px; }
+  .intro { display: flex; flex-direction: column; gap: 12px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+    gap: 24px;
+  }
+  article {
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  h3 { font-size: 28px; }
+  article p { color: var(--text-muted); }
+  .more { font-weight: 600; margin-top: 8px; display: inline-flex; align-items: center; min-height: 44px; }
+
+  @media (max-width: 767px) { article { padding: 28px; } }
+</style>

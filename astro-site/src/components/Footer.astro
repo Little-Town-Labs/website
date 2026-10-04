@@ -1,0 +1,30 @@
+---
+import { footer, site } from '../data/site';
+---
+
+<footer class="on-dark">
+  <div class="container top">
+    <div class="brand">
+      <div class="name">LITTLE TOWN LABS</div>
+      <p>{site.tagline}</p>
+    </div>
+    <nav class="more" aria-label="Footer">
+      <div class="head">More</div>
+      {footer.links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+  </div>
+  <div class="container copy">{footer.copyright}</div>
+</footer>
+
+<style>
+  footer { background: var(--ink); color: var(--text-on-dark); }
+  .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-block: 56px; }
+  .brand { display: flex; flex-direction: column; gap: 8px; max-width: 460px; }
+  .name { font-family: var(--font-mono); color: var(--ground); font-weight: 500; }
+  .brand p { font-size: 14px; }
+  .more { display: flex; flex-direction: column; gap: 0; font-size: 14px; }
+  .head { color: var(--ground); font-weight: 600; margin-bottom: 4px; }
+  .more a { color: var(--text-on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+  .more a:hover { color: #fff; }
+  .copy { padding-bottom: 32px; font-size: 13px; color: #a9b6c3; }
+</style>

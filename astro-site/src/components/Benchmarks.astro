@@ -1,0 +1,58 @@
+---
+import { benchmarks } from '../data/site';
+---
+
+<section id="benchmarks" class="proof on-dark">
+  <div class="container section grid">
+    <div class="copy">
+      <p class="eyebrow">{benchmarks.eyebrow}</p>
+      <h2 class="h2">{benchmarks.title}</h2>
+      <p class="body">{benchmarks.body}</p>
+      <a class="link" href={benchmarks.link.href}>{benchmarks.link.label} <span aria-hidden="true">→</span></a>
+    </div>
+    <dl class="tiles">
+      {benchmarks.metrics.map((m) => (
+        <div class="tile">
+          <dd>{m.value}</dd>
+          <dt>{m.label}</dt>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  .proof { background: var(--ink); color: var(--ground); }
+  .section { padding-block: 96px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+    gap: 56px;
+    align-items: center;
+  }
+  .copy { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .h2 { line-height: 1.15; }
+  .body { color: var(--text-on-dark); font-size: 18px; }
+  .link { color: var(--accent-on-dark); font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
+  .link:hover { color: #fff; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0; }
+  .tile {
+    background: var(--ink-2);
+    border: 1px solid var(--ink-line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 6px;
+    min-width: 0;
+  }
+  dd { margin: 0; font-size: 32px; font-weight: 700; overflow-wrap: anywhere; }
+  dt { color: var(--subtle-on-dark); font-size: 14px; }
+
+  @media (max-width: 767px) {
+    .section { padding-block: 64px; }
+    .tiles { grid-template-columns: 1fr; }
+    dd { font-size: 28px; }
+  }
+</style>

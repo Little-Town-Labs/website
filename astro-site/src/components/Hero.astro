@@ -1,0 +1,72 @@
+---
+import { hero } from '../data/site';
+---
+
+<section id="top" class="hero on-dark">
+  <div class="container grid">
+    <div class="copy">
+      <p class="eyebrow">{hero.eyebrow}</p>
+      <h1>{hero.title}</h1>
+      <p class="sub">{hero.subhead}</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+        <a class="btn btn-secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+      </div>
+    </div>
+
+    <figure class="demo" aria-label="Example of prompt redaction">
+      <div class="label">prompt.in</div>
+      <div class="line">
+        {hero.promptIn.map((s) => (s.pii ? <span class="tok pii">{s.t}</span> : s.t))}
+      </div>
+      <div class="rule"></div>
+      <div class="label">gateway.out</div>
+      <div class="line">
+        {hero.gatewayOut.map((s) => (s.masked ? <span class="tok masked">{s.t}</span> : s.t))}
+      </div>
+      <div class="note">{hero.demoNote}</div>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .hero { background: var(--ink); color: var(--ground); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+    gap: 64px;
+    align-items: center;
+    padding-block: 96px 112px;
+  }
+  .copy { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  h1 { font-size: 60px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+  .sub { font-size: 20px; color: var(--text-on-dark); max-width: 560px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 16px; }
+
+  .demo {
+    margin: 0;
+    background: var(--ink-2);
+    border: 1px solid var(--ink-line);
+    border-radius: var(--radius-card);
+    padding: 28px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .label { color: #8a99a8; font-size: 13px; }
+  .line { color: #e6eaee; overflow-wrap: anywhere; }
+  .rule { height: 1px; background: var(--ink-line); }
+  .note { color: var(--accent-on-dark); font-size: 13px; }
+  .tok { padding: 1px 6px; border-radius: 3px; }
+  .pii { background: var(--pii-bg); color: var(--pii-text); }
+  .masked { background: var(--masked-bg); color: var(--masked-text); }
+
+  @media (max-width: 767px) {
+    .grid { padding-block: 56px 64px; gap: 40px; }
+    h1 { font-size: 40px; }
+    .sub { font-size: 18px; }
+    .ctas .btn { width: 100%; justify-content: center; text-align: center; }
+  }
+</style>
