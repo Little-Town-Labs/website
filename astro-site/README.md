@@ -19,14 +19,13 @@ Benchmark values `[RECALL]`, `[PRECISION]`, `[F1]` are placeholders. Replace the
 
 ## Contact form
 
-Set `PUBLIC_FORM_ENDPOINT` (see `.env.example`) to a URL that accepts a JSON POST. Until it is set, the form shows a "not connected" error on submit. The form has client-side validation, a honeypot field, and a note asking people not to submit PHI.
+Uses Netlify Forms (form name `contact`), so it only accepts submissions once deployed on Netlify. It does not submit from `npm run dev`. The form has client-side validation, a `bot-field` honeypot, and a note asking people not to submit PHI. After the first deploy, confirm the form appears under Forms in the Netlify dashboard and add an email notification there.
 
 ## Deploy
 
-Run `npm run build` and publish `dist/`. Security headers are in `public/_headers` (Netlify and Cloudflare Pages format); port them to the host config if using another provider. The CSP allows only same-origin resources, so if the form posts to a third-party backend, add that origin to `connect-src`.
+`netlify.toml` builds from `astro-site/` and publishes `dist/`. Security headers are in `public/_headers` (Netlify and Cloudflare Pages format); port them to the host config if using another provider. The CSP allows only same-origin resources.
 
 ## Still to do
 
-- Choose hosting and form backend
 - Replace `public/images/og-image.png` with a purpose-made 1200x630 image
 - Real content for `/healthcare`, `/legal`, `/benchmarks`, `/privacy`

@@ -1,10 +1,9 @@
 ---
 import { contact } from '../data/site';
-// Endpoint is chosen at build time. Unset means the form reports a clear error instead of failing silently.
-const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
 ---
 
-<form id="contact-form" novalidate data-endpoint={endpoint}>
+<form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="contact" />
   <div class="two">
     <div class="field">
       <label for="cf-name">Name</label>
@@ -36,8 +35,8 @@ const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
 
   <!-- Honeypot: hidden from people, tempting to bots. -->
   <div class="hp" aria-hidden="true">
-    <label for="cf-website">Leave this field empty</label>
-    <input id="cf-website" type="text" name="website" tabindex="-1" autocomplete="off" />
+    <label for="cf-bot-field">Leave this field empty</label>
+    <input id="cf-bot-field" type="text" name="bot-field" tabindex="-1" autocomplete="off" />
   </div>
 
   <p class="phi">{contact.phiNote}</p>
@@ -116,27 +115,22 @@ const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
         return;
       }
 
-      const data = Object.fromEntries(new FormData(form).entries());
-      if (data.website) {
+      const fd = new FormData(form);
+      if (fd.get('bot-field')) {
         // Honeypot filled: pretend success.
         setStatus('Thanks. We will reply within one business day.', 'ok');
         form.reset();
         return;
       }
 
-      const endpoint = form.dataset.endpoint;
-      if (!endpoint) {
-        setStatus('The form is not connected yet. Please try again later.', 'fail');
-        return;
-      }
-
       const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
       btn.disabled = true;
       try {
-        const res = await fetch(endpoint, {
+        // Netlify Forms expects a form-encoded POST to the site root.
+        const res = await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(fd as unknown as Record<string, string>).toString(),
         });
         if (!res.ok) throw new Error(String(res.status));
         setStatus('Thanks. We will reply within one business day.', 'ok');
