@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little Town Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0B6564}a:hover{color:#0F1B2A}
+</style>
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, sans-serif; color: #0F1B2A; background: #F5F6F3; line-height: 1.55">
+
+<!-- NAV -->
+<header style="background: #0F1B2A; color: #F5F6F3">
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="color: #F5F6F3; text-decoration: none; font-family: 'IBM Plex Mono', Menlo, monospace; font-weight: 500; font-size: 18px; letter-spacing: 0.02em">LITTLE TOWN LABS</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px">
+<a href="#services" style="color: #D6DCE3; text-decoration: none">Services</a>
+<a href="#industries" style="color: #D6DCE3; text-decoration: none">Industries</a>
+<a href="#proof" style="color: #D6DCE3; text-decoration: none">Benchmarks</a>
+<a href="#about" style="color: #D6DCE3; text-decoration: none">About</a>
+</nav>
+<a href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; background: #0B6564; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 6px">Book a consult</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="background: #0F1B2A; color: #F5F6F3">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 32px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 64px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px; color: #8FD3CF; letter-spacing: 0.08em">DE-IDENTIFICATION // ANALYTICS // AI GATEWAYS // AI IMPLEMENTATION</div>
+<h1 style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em">Put AI to work on sensitive data. Without exposing it.</h1>
+<p style="margin: 0; font-size: 20px; color: #C9D1DA; max-width: 560px">We help healthcare organizations and law firms de-identify data, turn it into reporting they can act on, govern every model call, and roll out AI tools with the safeguards their compliance teams expect.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<a href="#contact" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #0B6564; color: #FFFFFF; text-decoration: none; font-weight: 600; border-radius: 6px">Start with a de-identification audit</a>
+<a href="#services" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border: 1px solid #5B6B7C; color: #F5F6F3; text-decoration: none; font-weight: 500; border-radius: 6px">See our services</a>
+</div>
+</div>
+<div style="background: #16263A; border: 1px solid #2A3B50; border-radius: 10px; padding: 28px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 15px; display: flex; flex-direction: column; gap: 14px">
+<div style="color: #8A99A8; font-size: 13px">prompt.in</div>
+<div style="color: #E6EAEE">Summarize the visit for <span style="background: #6B3B12; color: #FFD9B8; padding: 1px 6px; border-radius: 3px">Maria Lopez</span>, DOB <span style="background: #6B3B12; color: #FFD9B8; padding: 1px 6px; border-radius: 3px">03/14/1961</span>, MRN <span style="background: #6B3B12; color: #FFD9B8; padding: 1px 6px; border-radius: 3px">00482913</span></div>
+<div style="height: 1px; background: #2A3B50"></div>
+<div style="color: #8A99A8; font-size: 13px">gateway.out</div>
+<div style="color: #E6EAEE">Summarize the visit for <span style="background: #0B4F4E; color: #BFF0EC; padding: 1px 6px; border-radius: 3px">[PATIENT_1]</span>, DOB <span style="background: #0B4F4E; color: #BFF0EC; padding: 1px 6px; border-radius: 3px">[DATE_1]</span>, MRN <span style="background: #0B4F4E; color: #BFF0EC; padding: 1px 6px; border-radius: 3px">[ID_1]</span></div>
+<div style="color: #8FD3CF; font-size: 13px">3 identifiers masked before the model saw them</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="max-width: 1200px; margin: 0 auto; padding: 104px 32px 40px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px; color: #0B6564; letter-spacing: 0.08em">WHAT WE DO</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; letter-spacing: -0.01em">Turn sensitive data into insight, and keep it protected wherever AI touches it.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+
+<article style="background: #FFFFFF; border: 1px solid #DDE2E0; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6564" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"></path><path d="M9 12h6"></path></svg>
+<h3 style="margin: 0; font-size: 24px">Data De-identification</h3>
+<p style="margin: 0; color: #3D4A57">Remove PHI and confidential client details from structured, semi-structured, and unstructured data so it can feed reporting, analytics, and AI.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>Validation audits of your current process</li>
+<li>Pipelines built on Presidio and Philter</li>
+<li>Deploy in your environment or ours (Azure)</li>
+<li>Ongoing managed service</li>
+</ul>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #DDE2E0; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6564" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="1.5"></rect><path d="M7 9V5M12 9V5M17 9V5M7 15v4M12 15v4M17 15v4"></path></svg>
+<h3 style="margin: 0; font-size: 24px">AI Gateway Implementation</h3>
+<p style="margin: 0; color: #3D4A57">Put a single, governed front door in front of every model your teams use, with PII guardrails, access control, logging, and cost tracking. Vendor-neutral, on the platform that fits you.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>LiteLLM proxy deployment and configuration</li>
+<li>Kong AI Gateway setup and policy design</li>
+<li>Portkey / Prisma AIRS AI Gateway implementation</li>
+<li>Prompt redaction before data leaves your network</li>
+<li>Grafana monitoring for usage, cost, and audit trails</li>
+</ul>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #DDE2E0; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6564" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"></path></svg>
+<h3 style="margin: 0; font-size: 24px">AI Implementation</h3>
+<p style="margin: 0; color: #3D4A57">Roll out AI assistants and agents to real teams, with use cases, safeguards, test plans, and training built around how your people actually work.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>Use case discovery and pilot design</li>
+<li>Safeguards for document systems and practice tools</li>
+<li>Self-hosted agent memory and knowledge bases (OpenViking)</li>
+<li>Governance aligned to the NIST AI RMF</li>
+<li>Staff training and adoption support</li>
+</ul>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #DDE2E0; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6564" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3 style="margin: 0; font-size: 24px">Data Analytics and Reporting</h3>
+<p style="margin: 0; color: #3D4A57">Turn operational data into reporting leaders trust, from modern data platforms and BI dashboards to privacy-safe HTML reports built on de-identified snapshots, with no live connection to your source systems.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>Azure data platform design and build</li>
+<li>Power BI and Grafana dashboards and data models</li>
+<li>Privacy-safe HTML reporting (Observable Framework, Evidence, Quarto)</li>
+<li>Data quality, cleansing, and validation</li>
+<li>Process improvement analysis</li>
+</ul>
+</article>
+</div>
+</section>
+
+<!-- HOW IT FITS -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 56px 32px 104px">
+<div style="background: #FFFFFF; border: 1px solid #DDE2E0; border-radius: 10px; padding: 40px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 28px">Protection at rest and in flight</h2>
+<p style="margin: 0; color: #3D4A57; max-width: 720px">De-identification secures the data you store and analyze. The AI gateway secures what your people send to models. Together they close the gap most organizations leave open.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<span style="width: 120px; color: #5A6775">AT REST</span>
+<span style="padding: 12px 16px; border: 1px solid #C5CCCA; border-radius: 6px">EHR / case files</span>
+<span aria-hidden="true" style="color: #5A6775">→</span>
+<span style="padding: 12px 16px; background: #0F1B2A; color: #F5F6F3; border-radius: 6px">De-identification pipeline</span>
+<span aria-hidden="true" style="color: #5A6775">→</span>
+<span style="padding: 12px 16px; border: 1px solid #C5CCCA; border-radius: 6px">Dashboards and HTML reports</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<span style="width: 120px; color: #5A6775">IN FLIGHT</span>
+<span style="padding: 12px 16px; border: 1px solid #C5CCCA; border-radius: 6px">Staff and apps</span>
+<span aria-hidden="true" style="color: #5A6775">→</span>
+<span style="padding: 12px 16px; background: #0B6564; color: #FFFFFF; border-radius: 6px">AI gateway with PII guardrails</span>
+<span aria-hidden="true" style="color: #5A6775">→</span>
+<span style="padding: 12px 16px; border: 1px solid #C5CCCA; border-radius: 6px">Claude, OpenAI, Azure, others</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" style="background: #E9EDEA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px; color: #0B6564; letter-spacing: 0.08em">WHO WE SERVE</div>
+<h2 style="margin: 0; font-size: 40px; letter-spacing: -0.01em">Built for regulated work</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+<article style="background: #FFFFFF; border-radius: 10px; padding: 40px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 28px">Healthcare</h3>
+<p style="margin: 0; color: #3D4A57">Clinics, health systems, and health tech teams that need patient data for analytics and AI without putting PHI at risk.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>HIPAA Safe Harbor and Expert Determination support</li>
+<li>EHR data (including eClinicalWorks) to Azure and Power BI</li>
+<li>Clinical note de-identification</li>
+<li>We sign BAAs</li>
+</ul>
+<a href="#contact" style="font-weight: 600; margin-top: 8px">Healthcare services →</a>
+</article>
+<article style="background: #FFFFFF; border-radius: 10px; padding: 40px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 28px">Legal</h3>
+<p style="margin: 0; color: #3D4A57">Law firms adopting AI that must protect privilege, client confidentiality, and sensitive case material.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>Safe AI rollouts inside document management systems</li>
+<li>Redaction for discovery and protective orders</li>
+<li>Guardrails on what leaves the firm</li>
+<li>Practice management integrations</li>
+</ul>
+<a href="#contact" style="font-weight: 600; margin-top: 8px">Legal services →</a>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ENGAGEMENT LADDER -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 40px; letter-spacing: -0.01em">How we work together</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #0F1B2A; padding-top: 20px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; color: #0B6564; font-size: 14px">01 // VALIDATE</div>
+<h3 style="margin: 0; font-size: 22px">De-identification audit</h3>
+<p style="margin: 0; color: #3D4A57">We test your current process against synthetic data with known PHI and show you exactly what leaks and what gets over-redacted.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #0F1B2A; padding-top: 20px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; color: #0B6564; font-size: 14px">02 // IMPLEMENT</div>
+<h3 style="margin: 0; font-size: 22px">Build and deploy</h3>
+<p style="margin: 0; color: #3D4A57">Pipelines, gateways, and AI tooling deployed in your environment, tested, documented, and handed over.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #0F1B2A; padding-top: 20px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; color: #0B6564; font-size: 14px">03 // MANAGE</div>
+<h3 style="margin: 0; font-size: 22px">Managed service</h3>
+<p style="margin: 0; color: #3D4A57">We monitor, tune, and re-validate over time so protection keeps pace with new data and new models.</p>
+</div>
+</div>
+</section>
+
+<!-- PROOF -->
+<section id="proof" style="background: #0F1B2A; color: #F5F6F3">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px; color: #8FD3CF; letter-spacing: 0.08em">BENCHMARKS</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15">We measure de-identification. We don't just promise it.</h2>
+<p style="margin: 0; color: #C9D1DA; font-size: 18px">Our test harness generates realistic synthetic clinical notes with tagged ground-truth PHI, then scores any de-identification tool on recall, precision, and F1.</p>
+<a href="#contact" style="color: #8FD3CF; font-weight: 600">Read the benchmark report →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+<div style="background: #16263A; border: 1px solid #2A3B50; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 32px; font-weight: 700">[RECALL]</div>
+<div style="color: #A9B6C3; font-size: 14px">PHI caught</div>
+</div>
+<div style="background: #16263A; border: 1px solid #2A3B50; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 32px; font-weight: 700">[PRECISION]</div>
+<div style="color: #A9B6C3; font-size: 14px">Redactions correct</div>
+</div>
+<div style="background: #16263A; border: 1px solid #2A3B50; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 32px; font-weight: 700">[F1]</div>
+<div style="color: #A9B6C3; font-size: 14px">Overall score</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="max-width: 1200px; margin: 0 auto; padding: 104px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px; align-items: start">
+<div style="aspect-ratio: 4 / 5; max-width: 380px; background: #E2E6E4; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #5A6775; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px">[GARY PHOTO]</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px; color: #0B6564; letter-spacing: 0.08em">ABOUT</div>
+<h2 style="margin: 0; font-size: 36px">Gary Brown, Founder</h2>
+<p style="margin: 0; color: #3D4A57; font-size: 18px">Gary has spent more than 25 years in financial services data and analytics, one of the most regulated data environments there is. He founded Little Town Labs to bring that same discipline to healthcare and legal organizations adopting AI.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A57; display: flex; flex-direction: column; gap: 6px">
+<li>M.S. in Information Technology, Information Security</li>
+<li>NIST AI RMF certified</li>
+<li>SAFe 6 POPM and SSM, SAFe AI certified</li>
+</ul>
+<p style="margin: 0; color: #3D4A57">Delivered in partnership with <a href="https://timelesstechs.com/">Timeless Technology Solutions</a>.</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: #E9EDEA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 40px; letter-spacing: -0.01em">Talk to us about your data</h2>
+<p style="margin: 0; color: #3D4A57; font-size: 18px">Tell us what you're working with. We'll reply within one business day with next steps, usually starting with a short discovery call.</p>
+</div>
+<form style="display: flex; flex-direction: column; gap: 16px; background: #FFFFFF; border-radius: 10px; padding: 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px">Name<input type="text" name="name" style="min-height: 44px; padding: 0 12px; border: 1px solid #A9B3B0; border-radius: 6px; font: inherit; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px">Work email<input type="email" name="email" style="min-height: 44px; padding: 0 12px; border: 1px solid #A9B3B0; border-radius: 6px; font: inherit; font-weight: 400"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px">Organization<input type="text" name="org" style="min-height: 44px; padding: 0 12px; border: 1px solid #A9B3B0; border-radius: 6px; font: inherit; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px">Industry<select name="industry" style="min-height: 44px; padding: 0 12px; border: 1px solid #A9B3B0; border-radius: 6px; font: inherit; font-weight: 400; background: #FFFFFF"><option>Healthcare</option><option>Legal</option><option>Other</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px">What are you trying to solve?<textarea name="message" rows="4" style="padding: 12px; border: 1px solid #A9B3B0; border-radius: 6px; font: inherit; font-weight: 400"></textarea></label>
+<button type="submit" style="min-height: 48px; background: #0B6564; color: #FFFFFF; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer">Send message</button>
+</form>
+</div>
+</section>
+
+<!-- LABS + FOOTER -->
+<footer style="background: #0F1B2A; color: #C9D1DA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; color: #F5F6F3; font-weight: 500">LITTLE TOWN LABS</div>
+<div style="font-size: 14px">De-identification, analytics, AI gateways, and AI implementation for regulated industries.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+<div style="color: #F5F6F3; font-weight: 600">More</div>
+<a href="https://blog.littletownlabs.site/" style="color: #C9D1DA">Blog</a>
+<a href="#contact" style="color: #C9D1DA">Contact</a>
+</div>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 32px 32px; font-size: 13px; color: #8A99A8">© 2026 Little Town Labs</div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import PageStub from '../components/PageStub.astro';
+import { benchmarks } from '../data/site';
+---
+
+<Base title="Benchmarks | Little Town Labs" description="How we score de-identification tools on recall, precision, and F1 using synthetic clinical notes with known PHI.">
+  <PageStub eyebrow="Benchmarks" title="De-identification benchmark report">
+    <p>{benchmarks.body}</p>
+    <p>Results: recall [RECALL], precision [PRECISION], F1 [F1]. The full report will be published here.</p>
+  </PageStub>
+</Base>

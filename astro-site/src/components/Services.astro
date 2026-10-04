@@ -1,0 +1,50 @@
+---
+import { services, servicesIntro, type IconName } from '../data/site';
+
+// Inline stroke icons, decorative only.
+const icons: Record<IconName, string[]> = {
+  shield: ['M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z', 'M9 12h6'],
+  gateway: ['M7 9V5M12 9V5M17 9V5M7 15v4M12 15v4M17 15v4'],
+  ai: ['M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1'],
+  chart: ['M4 20V10M10 20V4M16 20v-7M22 20H2'],
+};
+---
+
+<section id="services" class="section">
+  <div class="container wrap">
+    <div class="intro">
+      <p class="eyebrow">{servicesIntro.eyebrow}</p>
+      <h2 class="h2">{servicesIntro.title}</h2>
+    </div>
+    <div class="grid">
+      {services.map((s) => (
+        <article class="card">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6564" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            {icons[s.icon].map((d) => <path d={d} />)}
+            {s.icon === 'gateway' && <rect x="3" y="9" width="18" height="6" rx="1.5" />}
+            {s.icon === 'ai' && <circle cx="12" cy="12" r="3" />}
+          </svg>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+          <ul class="bullets">{s.bullets.map((b) => <li>{b}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section { padding-bottom: 40px; }
+  .wrap { display: flex; flex-direction: column; gap: 48px; }
+  .intro { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+  article { display: flex; flex-direction: column; gap: 16px; }
+  h3 { font-size: 24px; }
+  article p { color: var(--text-muted); }
+</style>

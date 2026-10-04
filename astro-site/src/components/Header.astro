@@ -1,0 +1,93 @@
+---
+import { nav, site } from '../data/site';
+---
+
+<header class="site-header on-dark">
+  <div class="container bar">
+    <a class="wordmark" href="/">LITTLE TOWN LABS</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="sr-only">Menu</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+    </button>
+    <nav id="primary-nav" aria-label="Primary">
+      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      <a class="btn btn-primary cta" href="/#contact">Book a consult</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header { background: var(--ink); color: var(--ground); }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 20px;
+  }
+  .wordmark {
+    color: var(--ground);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  nav { display: flex; align-items: center; gap: 28px; font-size: 15px; }
+  nav a:not(.btn) {
+    color: #d6dce3;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  nav a:not(.btn):hover { color: #fff; text-decoration: underline; }
+  .cta { min-height: 44px; padding: 0 20px; font-size: 15px; }
+  .nav-toggle {
+    display: none;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--ink-line);
+    border-radius: var(--radius-btn);
+    color: var(--ground);
+    cursor: pointer;
+  }
+
+  /* Collapse only once the script has run, so the nav stays usable without JS. */
+  @media (max-width: 767px) {
+    :global(html.js) .nav-toggle { display: inline-flex; }
+    :global(html.js) nav { display: none; flex-basis: 100%; flex-direction: column; align-items: stretch; gap: 0; }
+    :global(html.js) nav.open { display: flex; }
+    :global(html.js) nav a:not(.btn) { border-top: 1px solid var(--ink-line); }
+    :global(html.js) nav .cta { margin-top: 12px; justify-content: center; }
+    nav { flex-wrap: wrap; gap: 4px 20px; }
+  }
+</style>
+
+<script>
+  document.documentElement.classList.add('js');
+  const btn = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  if (btn && nav) {
+    const set = (open: boolean) => {
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
+    nav.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) set(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') set(false);
+    });
+  }
+</script>
