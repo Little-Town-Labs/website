@@ -3,7 +3,7 @@
 
 export const site = {
   name: 'Little Town Labs',
-  url: 'https://www.littletownlabs.com',
+  url: 'https://littletownlabs.com',
   title: 'Little Town Labs | De-identification, Analytics, and AI for Healthcare and Legal',
   description:
     'Little Town Labs helps healthcare organizations and law firms de-identify data, build privacy-safe analytics, and implement AI gateways and AI tools with the safeguards compliance teams expect.',
