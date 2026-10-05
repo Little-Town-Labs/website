@@ -104,7 +104,7 @@ Put service, industry, and step content in a data file (`src/data/site.ts`) so c
 - Meta description (no em dashes): "Little Town Labs helps healthcare organizations and law firms de-identify data, build privacy-safe analytics, and implement AI gateways and AI tools with the safeguards compliance teams expect."
 - Open Graph and Twitter card tags; reuse or regenerate `og-image.jpg`
 - `sitemap.xml` (via `@astrojs/sitemap`) and `robots.txt`
-- Canonical URL: https://www.littletownlabs.com
+- Canonical URL: https://littletownlabs.com
 
 ## Privacy and security (practice what we sell)
 
