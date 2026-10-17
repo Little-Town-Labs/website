@@ -56,3 +56,6 @@ docs/
 # Astro rebuild: re-include its public dir and docs
 !astro-site/public/
 !astro-site/*.md
+
+# Local Netlify folder
+.netlify
