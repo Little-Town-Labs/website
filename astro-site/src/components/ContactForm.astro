@@ -24,6 +24,7 @@ import { contact } from '../data/site';
   <div class="field">
     <label for="cf-industry">Industry</label>
     <select id="cf-industry" name="industry">
+      <option value="">{contact.industryPrompt}</option>
       {contact.industries.map((i) => <option value={i}>{i}</option>)}
     </select>
   </div>
