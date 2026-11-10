@@ -10,7 +10,7 @@
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { clientverse, env, http, importAll, need, recordLead, stateFile } from './lib.mjs';
+import { clientverse, env, fetchAll, http, importAll, need, recordLead, stateFile } from './lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const EA = env('EA_API_URL', 'http://127.0.0.1:8090/index.php/api/v1').replace(/\/+$/, '');
@@ -21,13 +21,11 @@ const store = stateFile(env('STATE_FILE', path.join(here, 'state-bookings.json')
 const PAGE = 100;
 
 async function fetchNewBookings(doneSet) {
-  const fresh = [];
-  for (let page = 1; page <= 200; page++) {
-    const batch = await http(`${EA}/appointments?page=${page}&length=${PAGE}&with=customer,service,provider`, { token: EA_TOKEN });
-    for (const a of batch) if (!doneSet.has(a.id)) fresh.push(a);
-    if (batch.length < PAGE) break;
-  }
-  return fresh.sort((a, b) => a.id - b.id); // oldest booking first
+  const all = await fetchAll(
+    (page) => http(`${EA}/appointments?page=${page}&length=${PAGE}&with=customer,service,provider`, { token: EA_TOKEN }),
+    PAGE,
+  );
+  return all.filter((a) => !doneSet.has(a.id)).sort((a, b) => a.id - b.id); // oldest booking first
 }
 
 // Related records (customer, provider, service) come back from EA with raw database field names.

@@ -5,10 +5,11 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fetchAll } from './lib.mjs';
 
 const run = promisify(execFile);
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -148,4 +149,29 @@ test('a wrong EA token fails loudly and imports nothing', async () => {
   const r = await sync('bookings.mjs', { EA_API_URL: `${url(ea)}/api/v1`, EA_API_TOKEN: 'wrong', STATE_FILE: path.join(tmp, 'auth.json') });
   assert.equal(r.ok, false);
   assert.equal(db.customers.length, 0);
+});
+
+// --- Paging: no silent cut-off --------------------------------------------------------------------
+test('fetchAll reads far more than the old 20,000-item cap', async () => {
+  const items = Array.from({ length: 30050 }, (_, i) => ({ id: i + 1 }));
+  const all = await fetchAll(async (page) => items.slice((page - 1) * 100, page * 100), 100);
+  assert.equal(all.length, 30050);
+  const unsized = await fetchAll(async (page) => items.slice((page - 1) * 100, page * 100)); // until an empty page
+  assert.equal(unsized.length, 30050);
+});
+
+test('fetchAll throws instead of looping when the server ignores the page number', async () => {
+  const items = [{ id: 1 }, { id: 2 }];
+  await assert.rejects(() => fetchAll(async () => items), /did not advance/);
+});
+
+test('bookings sync still imports booking 20,001 when the first 20,000 are done', async () => {
+  reset();
+  const stateFile = path.join(tmp, 'big.json');
+  writeFileSync(stateFile, JSON.stringify({ done: Array.from({ length: 20000 }, (_, i) => i + 1), partial: {} }));
+  appointments = Array.from({ length: 20001 }, (_, i) => booking(i + 1, `big${i}@t.org`, 'Big', `N${i}`));
+  const r = await sync('bookings.mjs', { EA_API_URL: `${url(ea)}/api/v1`, EA_API_TOKEN: 'eatoken', STATE_FILE: stateFile });
+  assert.ok(r.ok && r.out.includes('1 new booking(s)'), r.out);
+  assert.equal(db.customers.length, 1);
+  assert.equal(db.customers[0].name, 'Big N20000');
 });

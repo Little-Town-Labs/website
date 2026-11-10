@@ -7,7 +7,7 @@
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { clientverse, env, http, importAll, need, recordLead, stateFile } from './lib.mjs';
+import { clientverse, env, fetchAll, http, importAll, need, recordLead, stateFile } from './lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const NETLIFY_API = env('NETLIFY_API', 'https://api.netlify.com/api/v1');
@@ -20,15 +20,10 @@ const store = stateFile(env('STATE_FILE', path.join(here, 'state.json')));
 const netlify = (p) => http(`${NETLIFY_API}${p}`, { token: NETLIFY_TOKEN });
 
 async function fetchNewSubmissions(formId, doneSet) {
-  const fresh = [];
-  for (let page = 1; page <= 200; page++) {
-    const batch = await netlify(`/forms/${formId}/submissions?per_page=100&page=${page}`);
-    if (batch.length === 0) break;
-    for (const s of batch) if (!doneSet.has(s.id)) fresh.push(s);
-    // No early exit on a fully imported page: a failed submission can sit behind 100+ newer
-    // successes and must still be retried. Scan to the last page.
-  }
-  return fresh.reverse(); // oldest first
+  // Scan every page, no early exit on a fully imported one: a failed submission can sit behind 100+ newer
+  // successes and must still be retried.
+  const all = await fetchAll((page) => netlify(`/forms/${formId}/submissions?per_page=100&page=${page}`));
+  return all.filter((s) => !doneSet.has(s.id)).reverse(); // oldest first
 }
 
 function toLead(s) {

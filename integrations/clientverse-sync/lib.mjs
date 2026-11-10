@@ -37,6 +37,24 @@ export function stateFile(file) {
   };
 }
 
+// Reads every page of a list endpoint, oldest page first. There is deliberately no page limit: a cap would
+// silently stop importing once a source grows past it. If the server ever stops advancing (returns the same
+// page again) this throws instead of looping forever.
+//   fetchPage(n) -> array of items with an `id`;  size: stop early when a page is shorter than this
+export async function fetchAll(fetchPage, size) {
+  const all = [];
+  const firstIds = new Set();
+  for (let page = 1; ; page++) {
+    const batch = await fetchPage(page);
+    if (batch.length === 0) break;
+    if (firstIds.has(batch[0].id)) throw new Error(`Paging did not advance at page ${page}; refusing to loop forever`);
+    firstIds.add(batch[0].id);
+    all.push(...batch);
+    if (size && batch.length < size) break;
+  }
+  return all;
+}
+
 export function clientverse(baseUrl, token) {
   const base = baseUrl.replace(/\/+$/, '');
   return (p, method, body) => http(`${base}/api/v1${p}`, { token, method, body });
