@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import OfferPage from '../components/OfferPage.astro';
+import { smallBusiness } from '../data/offers';
+---
+
+<Base title={smallBusiness.seo.title} description={smallBusiness.seo.description}>
+  <OfferPage content={smallBusiness} />
+</Base>

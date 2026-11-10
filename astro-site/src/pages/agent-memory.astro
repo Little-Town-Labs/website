@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import OfferPage from '../components/OfferPage.astro';
+import { agentMemory } from '../data/offers';
+---
+
+<Base title={agentMemory.seo.title} description={agentMemory.seo.description}>
+  <OfferPage content={agentMemory} />
+</Base>

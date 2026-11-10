@@ -17,6 +17,8 @@ export const nav = [
   { label: 'Services', href: '/#services' },
   { label: 'Industries', href: '/#industries' },
   { label: 'Benchmarks', href: '/#benchmarks' },
+  { label: 'Small business', href: '/small-business' },
+  { label: 'Agent memory', href: '/agent-memory' },
   { label: 'About', href: '/#about' },
 ];
 
@@ -191,11 +193,13 @@ export const contact = {
   title: 'Talk to us about your data',
   body: "Tell us what you're working with. We'll reply within one business day with next steps, usually starting with a short discovery call.",
   phiNote: "Please don't include patient or client information in this form.",
-  industries: ['Healthcare', 'Legal', 'Other'],
+  industries: ['Healthcare', 'Legal', 'Small business', 'Other'],
 };
 
 export const footer = {
   links: [
+    { label: 'AI for small business', href: '/small-business' },
+    { label: 'Agent memory', href: '/agent-memory' },
     { label: 'Blog', href: site.blogUrl },
     { label: 'Contact', href: '/contact' },
     { label: 'Privacy', href: '/privacy' },
