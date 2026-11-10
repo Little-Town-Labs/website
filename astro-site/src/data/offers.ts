@@ -86,7 +86,7 @@ export const smallBusiness: OfferPageContent = {
         bullets: [
           'A fixed scope agreed up front',
           'Connected to your email, documents, or customer records',
-          'Logging and spending limits built in',
+          'Every run logged, spending limits set, and a person approves anything that goes outside the company',
           'Tested with your real examples, then handed over with documentation',
         ],
         fit: 'Best for the one or two tasks you repeat every day.',
@@ -153,6 +153,10 @@ export const smallBusiness: OfferPageContent = {
       {
         q: 'Do we have to change the tools we use?',
         a: 'No. We connect to the email, documents, and customer tools you already have.',
+      },
+      {
+        q: 'Why not just buy an all-in-one AI agent platform?',
+        a: 'For simple tasks with non-sensitive data, a platform can be a good fit, and we will say so. We help when your data is sensitive, your systems are tangled, or you need to know exactly where your information goes and who can delete it. We also set up and tune whichever tools you choose, so you are not left to work it out alone.',
       },
       {
         q: 'What happens if someone pastes something they should not?',
@@ -255,6 +259,7 @@ export const agentMemory: OfferPageContent = {
           'OpenAI, Claude, and other models',
           'Your internal assistants and coding agents',
           'Connected through the memory layer API',
+          'Approval steps and run logs for consequential actions',
           'Training for the people who run it',
         ],
       },
@@ -304,6 +309,10 @@ export const agentMemory: OfferPageContent = {
       {
         q: 'Which agents does it work with?',
         a: 'Anything that can call an API. We connect OpenAI and Claude based assistants, internal tools, and coding agents.',
+      },
+      {
+        q: 'Why not use an AI platform that has memory built in?',
+        a: 'Built-in memory is convenient, but it often lives inside one vendor\'s product, and basics like where it is stored, who can delete it, and whether you can take it with you are not always clear. A memory layer you own answers those questions up front.',
       },
       {
         q: 'Is it open source, and who supports it?',
