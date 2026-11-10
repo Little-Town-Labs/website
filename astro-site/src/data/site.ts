@@ -4,9 +4,9 @@
 export const site = {
   name: 'Little Town Labs',
   url: 'https://littletownlabs.com',
-  title: 'Little Town Labs | De-identification, Analytics, and AI for Healthcare and Legal',
+  title: 'Little Town Labs | Safe AI for Small Business, Healthcare, and Legal',
   description:
-    'Little Town Labs helps healthcare organizations and law firms de-identify data, build privacy-safe analytics, and implement AI gateways and AI tools with the safeguards compliance teams expect.',
+    'We help small businesses, clinics, law firms, and growing companies put AI to work safely, with data protection, AI gateways, and agent memory.',
   blogUrl: 'https://blog.littletownlabs.site/',
   partnerUrl: 'https://timelesstechs.com/',
   bookingUrl: 'https://book.littletownlabs.com/',
@@ -25,12 +25,12 @@ export const nav = [
 export type Segment = { t: string; pii?: boolean; masked?: boolean };
 
 export const hero = {
-  eyebrow: 'De-identification // Analytics // AI Gateways // AI Implementation',
-  title: 'Put AI to work on sensitive data. Without exposing it.',
+  eyebrow: 'AI implementation // Data protection // Agent memory',
+  title: 'Put AI to work in your business. Without putting your data at risk.',
   subhead:
-    'We help healthcare organizations and law firms de-identify data, turn it into reporting they can act on, govern every model call, and roll out AI tools with the safeguards their compliance teams expect.',
-  primaryCta: { label: 'Start with a de-identification audit', href: '/#contact' },
-  secondaryCta: { label: 'See our services', href: '/#services' },
+    'We help small teams, clinics, law firms, and growing companies put AI to work in ways that save real time, protect sensitive information, and stay under your control.',
+  primaryCta: { label: 'Book a consult', href: site.bookingUrl },
+  secondaryCta: { label: 'See how we help', href: '#audiences' },
   promptIn: [
     { t: 'Summarize the visit for ' },
     { t: 'Maria Lopez', pii: true },
@@ -49,6 +49,26 @@ export const hero = {
   ] as Segment[],
   demoNote: '3 identifiers masked before the model saw them',
 };
+
+export const audiencesIntro = { eyebrow: 'Who we help', title: 'Find the right place to start' };
+
+export const audiences = [
+  {
+    title: 'Small business',
+    body: 'AI that saves your team hours, set up safely. We configure the tools, build the workflows, and keep them tuned.',
+    link: { label: 'See how we help small teams', href: '/small-business' },
+  },
+  {
+    title: 'Healthcare and legal',
+    body: 'Use AI on sensitive data without exposing it. De-identification, governed AI gateways, and safe rollouts for regulated work.',
+    link: { label: 'See our regulated-industry work', href: '/#industries' },
+  },
+  {
+    title: 'Companies adding AI',
+    body: 'A shared memory your agents can use and your company owns, running in your own environment.',
+    link: { label: 'See agent memory', href: '/agent-memory' },
+  },
+];
 
 export type IconName = 'shield' | 'gateway' | 'ai' | 'chart';
 
