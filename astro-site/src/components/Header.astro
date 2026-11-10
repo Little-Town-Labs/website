@@ -14,7 +14,7 @@ import HouseMark from './HouseMark.astro';
     </button>
     <nav id="primary-nav" aria-label="Primary">
       {nav.map((n) => <a href={n.href}>{n.label}</a>)}
-      <a class="btn btn-primary cta" href="/#contact">Book a consult</a>
+      <a class="btn btn-primary cta" href={site.bookingUrl}>Book a consult</a>
     </nav>
   </div>
 </header>
