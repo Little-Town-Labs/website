@@ -57,8 +57,8 @@ async function fetchNewSubmissions(formId, doneSet) {
     const batch = await netlify(`/forms/${formId}/submissions?per_page=100&page=${page}`);
     if (batch.length === 0) break;
     for (const s of batch) if (!doneSet.has(s.id)) fresh.push(s);
-    // Newest first: once a whole page is already imported, older pages are too.
-    if (batch.every((s) => doneSet.has(s.id))) break;
+    // No early exit on a fully imported page: a failed submission can sit behind 100+ newer
+    // successes and must still be retried. Scan to the last page.
   }
   return fresh.reverse(); // oldest first
 }
@@ -68,7 +68,9 @@ function splitName(full) {
   return { first_name: first || full, last_name: rest.join(' ') || null };
 }
 
-async function importSubmission(s, progress) {
+// `save` persists `progress` right after each CRM write, so a crash or restart resumes
+// from the last completed step instead of creating a second customer.
+async function importSubmission(s, progress, save) {
   const d = s.data || {};
   const email = (d.email || '').trim();
   const org = (d.org || '').trim() || d.name || email;
@@ -85,7 +87,11 @@ async function importSubmission(s, progress) {
       filters: [{ field: 'email', operator: '=', value: email }],
       limit: 1,
     });
-    if (found.data?.[0]) { progress.customer_id = found.data[0].customer_id; progress.existing = true; }
+    if (found.data?.[0]) {
+      progress.customer_id = found.data[0].customer_id;
+      progress.existing = true;
+      await save();
+    }
   }
 
   if (!progress.customer_id) {
@@ -94,6 +100,7 @@ async function importSubmission(s, progress) {
       metadata: { source: 'website', industry: d.industry || null, netlify_submission_id: s.id },
     });
     progress.customer_id = c.data.id;
+    await save();
   }
   if (!progress.existing && !progress.contact_id) {
     const c = await cv('/contacts', 'POST', {
@@ -101,10 +108,12 @@ async function importSubmission(s, progress) {
       email: email || null, is_primary: true,
     });
     progress.contact_id = c.data.id;
+    await save();
   }
   if (!progress.note_id) {
     const n = await cv('/customer-notes', 'POST', { customer_id: progress.customer_id, content: note });
     progress.note_id = n.data.id;
+    await save();
   }
 }
 
@@ -122,8 +131,10 @@ async function main() {
   let failed = 0;
   for (const s of fresh) {
     const progress = state.partial[s.id] || {};
+    state.partial[s.id] = progress;
+    const save = () => saveState({ ...state, done: [...done] });
     try {
-      await importSubmission(s, progress);
+      await importSubmission(s, progress, save);
       done.add(s.id);
       delete state.partial[s.id];
       console.log(`imported ${s.id} -> customer ${progress.customer_id}${progress.existing ? ' (existing)' : ''}`);
