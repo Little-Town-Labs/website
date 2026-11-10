@@ -15,6 +15,7 @@ const Heading = asH1 ? 'h1' : 'h2';
     <div class="copy">
       <Heading class="h2">{contact.title}</Heading>
       <p>{contact.body}</p>
+      <a class="btn btn-primary" href={contact.bookingCta.href}>{contact.bookingCta.label}</a>
     </div>
     <ContactForm />
   </div>
@@ -27,6 +28,7 @@ const Heading = asH1 ? 'h1' : 'h2';
     grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
     gap: 56px;
   }
-  .copy { display: flex; flex-direction: column; gap: 16px; }
+  .copy { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+  .copy :global(.h2) { text-wrap: balance; }
   .copy p { color: var(--text-muted); font-size: 18px; }
 </style>

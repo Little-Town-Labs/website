@@ -210,10 +210,12 @@ export const about = {
 };
 
 export const contact = {
-  title: 'Talk to us about your data',
-  body: "Tell us what you're working with. We'll reply within one business day with next steps, usually starting with a short discovery call.",
+  title: "Tell us what you're working on",
+  body: "Send a short note and we'll reply within one business day with next steps. Prefer to pick a time? Book a 30-minute consult instead.",
+  bookingCta: { label: 'Book a consult', href: site.bookingUrl },
   phiNote: "Please don't include patient or client information in this form.",
-  industries: ['Healthcare', 'Legal', 'Small business', 'Other'],
+  industryPrompt: 'Select one',
+  industries: ['Small business', 'Healthcare', 'Legal', 'Company adding AI', 'Other'],
 };
 
 export const footer = {
