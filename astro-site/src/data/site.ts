@@ -9,6 +9,7 @@ export const site = {
     'Little Town Labs helps healthcare organizations and law firms de-identify data, build privacy-safe analytics, and implement AI gateways and AI tools with the safeguards compliance teams expect.',
   blogUrl: 'https://blog.littletownlabs.site/',
   partnerUrl: 'https://timelesstechs.com/',
+  bookingUrl: 'https://book.littletownlabs.com/',
   tagline: 'De-identification, analytics, AI gateways, and AI implementation for regulated industries.',
 };
 
