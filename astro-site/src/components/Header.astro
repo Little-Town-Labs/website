@@ -1,10 +1,11 @@
 ---
 import { nav, site } from '../data/site';
+import HouseMark from './HouseMark.astro';
 ---
 
 <header class="site-header on-dark">
   <div class="container bar">
-    <a class="wordmark" href="/">LITTLE TOWN LABS</a>
+    <a class="wordmark" href="/"><span class="mark"><HouseMark height={26} /></span>LITTLE TOWN LABS</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
       <span class="sr-only">Menu</span>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -37,8 +38,10 @@ import { nav, site } from '../data/site';
     letter-spacing: 0.02em;
     display: inline-flex;
     align-items: center;
+    gap: 12px;
     min-height: 44px;
   }
+  .mark { display: inline-flex; color: var(--accent-on-dark); }
   nav { display: flex; align-items: center; gap: 28px; font-size: 15px; }
   nav a:not(.btn) {
     color: #d6dce3;
