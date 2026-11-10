@@ -1,0 +1,38 @@
+---
+import { audiences, audiencesIntro } from '../data/site';
+---
+
+<section id="audiences" class="section">
+  <div class="container wrap">
+    <div class="intro">
+      <p class="eyebrow">{audiencesIntro.eyebrow}</p>
+      <h2 class="h2">{audiencesIntro.title}</h2>
+    </div>
+    <div class="grid">
+      {audiences.map((a) => (
+        <article class="card">
+          <h3>{a.title}</h3>
+          <p>{a.body}</p>
+          <a class="more" href={a.link.href}>{a.link.label} <span aria-hidden="true">→</span></a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section { padding-bottom: 32px; }
+  .wrap { display: flex; flex-direction: column; gap: 40px; }
+  .intro { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  article { display: flex; flex-direction: column; gap: 14px; }
+  h3 { font-size: 24px; }
+  article p { color: var(--text-muted); }
+  .more { margin-top: auto; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+  .more:hover { text-decoration: underline; }
+</style>

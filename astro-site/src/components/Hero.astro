@@ -15,12 +15,12 @@ import { hero } from '../data/site';
     </div>
 
     <figure class="demo" aria-label="Example of prompt redaction">
-      <div class="label">prompt.in</div>
+      <div class="label">What your staff type</div>
       <div class="line">
         {hero.promptIn.map((s) => (s.pii ? <span class="tok pii">{s.t}</span> : s.t))}
       </div>
       <div class="rule"></div>
-      <div class="label">gateway.out</div>
+      <div class="label">What the AI receives</div>
       <div class="line">
         {hero.gatewayOut.map((s) => (s.masked ? <span class="tok masked">{s.t}</span> : s.t))}
       </div>
