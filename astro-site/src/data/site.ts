@@ -188,12 +188,15 @@ export const benchmarks = {
   title: "We measure de-identification. We don't just promise it.",
   body: 'Our test harness generates realistic synthetic clinical notes with tagged ground-truth PHI, then scores any de-identification tool on recall, precision, and F1.',
   link: { label: 'Read the benchmark report', href: '/benchmarks' },
-  // Placeholders stay marked until real results are published. Do not invent numbers.
+  // Figures are Philter's published results on UCSF clinical notes, not results from our own harness.
+  // Keep the source line attached to them. Do not invent numbers.
   metrics: [
-    { value: '[RECALL]', label: 'PHI caught' },
-    { value: '[PRECISION]', label: 'Redactions correct' },
-    { value: '[F1]', label: 'Overall score' },
+    { value: '99.46%', label: 'Recall: PHI caught' },
+    { value: '~78%', label: 'Precision: redactions correct' },
+    { value: '94.36%', label: 'F2 score (recall-weighted)' },
   ],
+  source:
+    'Published Philter results on the UCSF test corpus. Precision is lower by design: the tool favors catching every identifier over avoiding over-redaction. Philter has de-identified 130M+ clinical notes at UCSF.',
 };
 
 export const about = {

@@ -10,14 +10,17 @@ import { benchmarks } from '../data/site';
       <p class="body">{benchmarks.body}</p>
       <a class="link" href={benchmarks.link.href}>{benchmarks.link.label} <span aria-hidden="true">→</span></a>
     </div>
-    <dl class="tiles">
-      {benchmarks.metrics.map((m) => (
-        <div class="tile">
-          <dd>{m.value}</dd>
-          <dt>{m.label}</dt>
-        </div>
-      ))}
-    </dl>
+    <div class="stats">
+      <dl class="tiles">
+        {benchmarks.metrics.map((m) => (
+          <div class="tile">
+            <dd>{m.value}</dd>
+            <dt>{m.label}</dt>
+          </div>
+        ))}
+      </dl>
+      <p class="source">{benchmarks.source}</p>
+    </div>
   </div>
 </section>
 
@@ -35,6 +38,8 @@ import { benchmarks } from '../data/site';
   .body { color: var(--text-on-dark); font-size: 18px; }
   .link { color: var(--accent-on-dark); font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
   .link:hover { color: #fff; }
+  .stats { display: flex; flex-direction: column; gap: 16px; }
+  .source { margin: 0; color: var(--subtle-on-dark); font-size: 13px; }
   .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0; }
   .tile {
     background: var(--ink-2);
