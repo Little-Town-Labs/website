@@ -1,10 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
-import PageStub from '../components/PageStub.astro';
+import OfferPage from '../components/OfferPage.astro';
+import { legal } from '../data/offers';
+import { offerGraph } from '../data/seo';
+
+const graph = offerGraph(legal, '/legal/', {
+  name: 'Legal',
+  serviceType: 'Safe AI implementation and redaction for law firms',
+  audience: 'Law firms',
+});
 ---
 
-<Base title="Safe AI for Law Firms | Little Town Labs" description="Use AI without risking privilege or client confidentiality: redaction, guardrails on what leaves the firm, and safe rollouts inside your document systems.">
-  <PageStub eyebrow="Industries" title="Legal">
-    <p>Detailed legal content is coming soon. In the meantime, tell us what you are working on and we will reply within one business day.</p>
-  </PageStub>
+<Base title={legal.seo.title} description={legal.seo.description} graph={graph}>
+  <OfferPage content={legal} />
 </Base>
