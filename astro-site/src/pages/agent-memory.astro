@@ -2,8 +2,15 @@
 import Base from '../layouts/Base.astro';
 import OfferPage from '../components/OfferPage.astro';
 import { agentMemory } from '../data/offers';
+import { offerGraph } from '../data/seo';
+
+const graph = offerGraph(agentMemory, '/agent-memory/', {
+  name: 'Agent memory',
+  serviceType: 'Shared AI agent memory layer implementation',
+  audience: 'Companies adding AI agents to their stack',
+});
 ---
 
-<Base title={agentMemory.seo.title} description={agentMemory.seo.description}>
+<Base title={agentMemory.seo.title} description={agentMemory.seo.description} graph={graph}>
   <OfferPage content={agentMemory} />
 </Base>
