@@ -7,7 +7,6 @@ export const site = {
   title: 'Little Town Labs | Safe AI for Small Business, Healthcare, and Legal',
   description:
     'We help small businesses, clinics, law firms, and growing companies put AI to work safely, with data protection, AI gateways, and agent memory.',
-  blogUrl: 'https://blog.littletownlabs.site/',
   partnerUrl: 'https://timelesstechs.com/',
   bookingUrl: 'https://book.littletownlabs.com/',
   tagline: 'De-identification, analytics, AI gateways, and AI implementation for regulated industries.',
@@ -226,7 +225,8 @@ export const footer = {
   links: [
     { label: 'AI for small business', href: '/small-business' },
     { label: 'Agent memory', href: '/agent-memory' },
-    { label: 'Blog', href: site.blogUrl },
+    { label: 'Healthcare', href: '/healthcare' },
+    { label: 'Legal', href: '/legal' },
     { label: 'Contact', href: '/contact' },
     { label: 'Privacy', href: '/privacy' },
   ],

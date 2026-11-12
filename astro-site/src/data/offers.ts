@@ -338,3 +338,295 @@ export const agentMemory: OfferPageContent = {
     cta: book,
   },
 };
+
+export const healthcare: OfferPageContent = {
+  seo: {
+    title: 'HIPAA De-identification for Healthcare | Little Town Labs',
+    description:
+      'De-identify clinical data, analyze it safely, and put AI to work in clinics and health systems with HIPAA-aware safeguards. We sign BAAs.',
+  },
+  hero: {
+    eyebrow: 'Healthcare',
+    title: 'Use your patient data for analytics and AI without exposing PHI.',
+    subhead:
+      'We de-identify clinical data, turn it into reporting your team can act on, and put guardrails around every AI tool, so clinics, health systems, and health tech teams can move faster without putting patient information at risk.',
+    primaryCta: book,
+    secondaryCta: { label: 'See what we deliver', href: '#deliverables' },
+  },
+  outcomes: {
+    eyebrow: 'What changes',
+    title: 'What changes for your organization',
+    intro: 'Problems we hear from clinics, health systems, and health tech teams, and what they get instead.',
+    items: [
+      {
+        problem: 'You hold valuable patient data, but nobody is sure it is safe to use for analytics or AI.',
+        outcome: 'De-identified data that feeds reporting, analytics, and AI, built on tested tools and checked against known examples.',
+      },
+      {
+        problem: 'Your current de-identification process has never been properly tested.',
+        outcome: 'A validation audit that shows exactly what leaks and what gets over-redacted, using synthetic data with known PHI.',
+      },
+      {
+        problem: 'Staff are already pasting notes into AI tools.',
+        outcome: 'A governed front door for every model, with identifying details removed before anything leaves your network, and a log of what was sent.',
+      },
+      {
+        problem: 'Your EHR data is hard to turn into reports leaders trust.',
+        outcome: 'EHR data, including eClinicalWorks, flowing into Azure and Power BI dashboards your team can act on.',
+      },
+      {
+        problem: 'Your compliance team needs evidence, not promises.',
+        outcome: 'Measured results for your own process and clear documentation they can review.',
+      },
+    ],
+  },
+  offerings: {
+    id: 'deliverables',
+    eyebrow: 'What we deliver',
+    title: 'From raw data to safe analytics and AI',
+    intro: 'We start by testing what you have, then build, deploy, and look after what you need.',
+    items: [
+      {
+        title: 'De-identification audit',
+        body: 'We test your current process against synthetic data with known PHI and show you exactly what leaks and what gets over-redacted.',
+        bullets: [
+          'Validation audits of your current process',
+          'Support for HIPAA Safe Harbor and Expert Determination',
+          'Clinical note de-identification',
+        ],
+      },
+      {
+        title: 'De-identification pipelines',
+        body: 'Pipelines built on Presidio and Philter that remove PHI from the data feeding your reporting, analytics, and AI.',
+        bullets: [
+          'Structured, semi-structured, and unstructured data',
+          'Deployed in your environment or ours (Azure)',
+          'Ongoing managed service',
+        ],
+      },
+      {
+        title: 'AI gateway and safe AI rollout',
+        body: 'One governed front door for every model your teams use, with the safeguards your compliance team expects.',
+        bullets: [
+          'Prompt redaction before data leaves your network',
+          'Access control, logging, and cost tracking',
+          'LiteLLM, Kong, Portkey, or Prisma AIRS, whichever fits',
+          'Grafana monitoring for usage, cost, and audit trails',
+        ],
+      },
+      {
+        title: 'Analytics and reporting',
+        body: 'Reporting leaders trust, built on de-identified data.',
+        bullets: [
+          'EHR data (including eClinicalWorks) to Azure and Power BI',
+          'Privacy-safe HTML reports built on de-identified snapshots, with no live connection to your source systems',
+          'Data quality, cleansing, and validation',
+        ],
+      },
+    ],
+  },
+  notes: [
+    {
+      title: 'Two ways to de-identify under HIPAA',
+      body: 'HIPAA describes two methods. Safe Harbor removes 18 types of identifiers, such as names, small geographic areas, and most dates, and requires that you have no actual knowledge that what remains could identify someone. Expert Determination relies on a qualified expert who applies statistical methods and documents that the risk of re-identification is very small. We support both, and we help you choose the one that fits your data and your risk.',
+    },
+    {
+      title: 'We sign BAAs',
+      body: 'Where our work involves protected health information, we sign business associate agreements. Please do not send patient information through this website.',
+    },
+    {
+      title: 'Measured, not promised',
+      body: 'Our test harness generates realistic synthetic clinical notes with tagged ground-truth PHI, then scores any de-identification tool on recall, precision, and F1. We use it to show you what your current process catches and what it misses.',
+    },
+  ],
+  steps: {
+    title: 'How we work together',
+    items: [
+      {
+        tag: '01 // Validate',
+        title: 'De-identification audit',
+        body: 'We test your current process against synthetic data with known PHI and show you exactly what leaks and what gets over-redacted.',
+      },
+      {
+        tag: '02 // Implement',
+        title: 'Build and deploy',
+        body: 'Pipelines, gateways, and AI tooling deployed in your environment, tested, documented, and handed over.',
+      },
+      {
+        tag: '03 // Manage',
+        title: 'Managed service',
+        body: 'We monitor, tune, and re-validate over time so protection keeps pace with new data and new models.',
+      },
+    ],
+  },
+  faq: {
+    title: 'Questions we hear',
+    items: [
+      {
+        q: 'What is the difference between Safe Harbor and Expert Determination?',
+        a: 'Safe Harbor is a checklist method: you remove 18 types of identifiers and have no actual knowledge that the remaining information could identify a person. Expert Determination is a risk-based method: a qualified expert applies statistical methods and documents that the risk of re-identification is very small. Which one fits depends on your data and how it will be used.',
+      },
+      {
+        q: 'Is ChatGPT HIPAA compliant?',
+        a: 'No tool is compliant on its own. What matters is the vendor agreement you have, how the tool is configured, and what data you send. Using AI with protected health information generally requires a business associate agreement with the vendor and the right settings. The most reliable safeguard is to remove identifiers before data reaches any model, which is what we build. Check current vendor terms and your compliance officer\'s guidance.',
+      },
+      {
+        q: 'Do we need to de-identify data before using AI?',
+        a: 'Not always, but it reduces risk and often simplifies approvals. If a model never sees identifiers, there is far less to protect. We help you decide what to remove and where.',
+      },
+      {
+        q: 'Can you work inside our environment?',
+        a: 'Yes. We deploy in your environment or ours (Azure).',
+      },
+      {
+        q: 'Do you sign BAAs?',
+        a: 'Yes. Where our work involves protected health information, we sign business associate agreements.',
+      },
+      {
+        q: 'Is this legal advice?',
+        a: 'No. We are a technology consultancy. Your compliance officer and counsel decide what your obligations are. We build the technical safeguards.',
+      },
+      {
+        q: 'Do you work with organizations outside the United States?',
+        a: 'We work with companies and organizations in the United States only.',
+      },
+    ],
+  },
+  closing: {
+    title: 'Make your patient data safe to use.',
+    body: 'Book a 30-minute consult. We will walk through your data, your tools, and where to start.',
+    cta: book,
+  },
+};
+
+export const legal: OfferPageContent = {
+  seo: {
+    title: 'Safe AI for Law Firms | Little Town Labs',
+    description:
+      'Use AI without risking privilege or client confidentiality: redaction, guardrails on what leaves the firm, and safe rollouts inside your document systems.',
+  },
+  hero: {
+    eyebrow: 'Legal',
+    title: 'Use AI in your firm without risking privilege or client confidentiality.',
+    subhead:
+      'We help law firms roll out AI tools with guardrails on what leaves the firm, redaction for sensitive material, and training so your people use them well.',
+    primaryCta: book,
+    secondaryCta: { label: 'See what we deliver', href: '#deliverables' },
+  },
+  outcomes: {
+    eyebrow: 'What changes',
+    title: 'What changes for your firm',
+    intro: 'Problems we hear from law firms adopting AI, and what they get instead.',
+    items: [
+      {
+        problem: 'Lawyers and staff are already trying AI tools, with no firm-wide rules.',
+        outcome: 'A clear policy, guardrails, and training, so people know what is allowed and the firm can see what is used.',
+      },
+      {
+        problem: 'You worry what happens to client information once it reaches a model.',
+        outcome: 'Prompt redaction and a governed gateway, so sensitive details are removed before they leave the firm.',
+      },
+      {
+        problem: 'Discovery and protective orders mean heavy redaction work.',
+        outcome: 'Redaction support built around how your matters actually run.',
+      },
+      {
+        problem: 'AI tools sit apart from the systems your firm uses every day.',
+        outcome: 'Safe rollouts inside your document management and practice management systems.',
+      },
+    ],
+  },
+  offerings: {
+    id: 'deliverables',
+    eyebrow: 'What we deliver',
+    title: 'Safe AI, from first pilot to firm-wide use',
+    intro: 'We design the safeguards, put them in place, and train your people.',
+    items: [
+      {
+        title: 'Safe AI rollout',
+        body: 'Roll out AI assistants to real teams, with use cases, safeguards, and training built around how your people work.',
+        bullets: [
+          'Use case discovery and pilot design',
+          'Safeguards for document systems and practice tools',
+          'Governance aligned to the NIST AI RMF',
+          'Staff training and adoption support',
+        ],
+      },
+      {
+        title: 'AI gateway and guardrails',
+        body: 'One governed front door for every model your firm uses.',
+        bullets: [
+          'Guardrails on what leaves the firm',
+          'Prompt redaction before data leaves your network',
+          'Access control, logging, and cost tracking',
+          'LiteLLM, Kong, Portkey, or Prisma AIRS, whichever fits',
+        ],
+      },
+      {
+        title: 'Redaction and de-identification',
+        body: 'Remove confidential client details from documents and data so they can be used safely.',
+        bullets: [
+          'Redaction for discovery and protective orders',
+          'Deployed in your environment or ours (Azure)',
+          'Validated against known examples',
+        ],
+      },
+    ],
+  },
+  notes: [
+    {
+      title: 'Technology safeguards, not legal advice',
+      body: 'Professional duties around confidentiality and competence apply when lawyers use AI, and guidance is still evolving. We build the technical safeguards. Your counsel and ethics advisers decide what is permitted for your firm.',
+    },
+  ],
+  steps: {
+    title: 'How it works',
+    items: [
+      { tag: '01 // Talk', title: 'A 30-minute call', body: 'We learn how your firm works, which tools people are already using, and what worries you most.' },
+      {
+        tag: '02 // Pilot',
+        title: 'One team, with safeguards',
+        body: 'We set up guardrails and redaction for one practice group and try them on real workflows.',
+      },
+      {
+        tag: '03 // Roll out',
+        title: 'Firm-wide, with training',
+        body: 'We extend what works, add monitoring, and train your people.',
+      },
+    ],
+  },
+  faq: {
+    title: 'Questions we hear',
+    items: [
+      {
+        q: 'Can lawyers use ChatGPT and similar tools?',
+        a: 'Many firms do, with care. The questions are what client information goes in, what the provider does with it, and what your jurisdiction\'s rules and your clients\' agreements allow. We build the safeguards, and your counsel decides what is permitted.',
+      },
+      {
+        q: 'What should a firm AI policy cover?',
+        a: 'At a minimum: which tools are approved, what information may never be entered, who reviews AI output before it is used, and how use is logged. We help you turn that into settings and training, not just a document.',
+      },
+      {
+        q: 'What happens to our client data?',
+        a: 'With a gateway and redaction in front of the model, identifying details are removed before data leaves your network, and every request is logged. We can also deploy in your environment.',
+      },
+      {
+        q: 'Does this protect privilege?',
+        a: 'No technology can guarantee privilege. Our safeguards reduce what is exposed and give you a record of what was sent. Questions about privilege belong with your counsel.',
+      },
+      {
+        q: 'Is this legal advice?',
+        a: 'No. We are a technology consultancy. Your counsel and ethics advisers decide what your obligations are. We build the technical safeguards.',
+      },
+      {
+        q: 'Do you work with firms outside the United States?',
+        a: 'We work with companies and organizations in the United States only.',
+      },
+    ],
+  },
+  closing: {
+    title: 'Use AI without putting client trust at risk.',
+    body: 'Book a 30-minute consult. We will talk through how your firm works and where to start.',
+    cta: book,
+  },
+};

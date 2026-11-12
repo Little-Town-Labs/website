@@ -1,10 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
-import PageStub from '../components/PageStub.astro';
+import OfferPage from '../components/OfferPage.astro';
+import { healthcare } from '../data/offers';
+import { offerGraph } from '../data/seo';
+
+const graph = offerGraph(healthcare, '/healthcare/', {
+  name: 'Healthcare',
+  serviceType: 'HIPAA de-identification, analytics, and safe AI implementation for healthcare',
+  audience: 'Clinics, health systems, and health tech teams',
+});
 ---
 
-<Base title="HIPAA De-identification for Healthcare | Little Town Labs" description="De-identify clinical data, analyze it safely, and put AI to work in clinics and health systems with HIPAA-aware safeguards. We sign BAAs.">
-  <PageStub eyebrow="Industries" title="Healthcare">
-    <p>Detailed healthcare content is coming soon. In the meantime, tell us what you are working on and we will reply within one business day.</p>
-  </PageStub>
+<Base title={healthcare.seo.title} description={healthcare.seo.description} graph={graph}>
+  <OfferPage content={healthcare} />
 </Base>

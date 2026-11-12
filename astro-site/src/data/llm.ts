@@ -2,7 +2,7 @@
 // /llms-full.txt). Generated from the same data as the pages, so they cannot drift from what visitors read.
 // Same copy rules as site.ts: no em dashes, no invented numbers, prices, or results.
 import { about, contact, industries, process, services, site } from './site';
-import { agentMemory, smallBusiness, type OfferPageContent } from './offers';
+import { agentMemory, healthcare, legal, smallBusiness, type OfferPageContent } from './offers';
 
 const abs = (path: string) => new URL(path, site.url).href;
 
@@ -28,6 +28,8 @@ export function llmsTxt(): string {
     '',
     `- [AI for small business](${abs('/small-business/')}): ${smallBusiness.hero.subhead}`,
     `- [Agent memory](${abs('/agent-memory/')}): ${agentMemory.hero.subhead}`,
+    `- [Healthcare](${abs('/healthcare/')}): ${healthcare.hero.subhead}`,
+    `- [Legal](${abs('/legal/')}): ${legal.hero.subhead}`,
     `- [Services overview](${abs('/#services')}): data de-identification, AI gateway implementation, AI implementation, and data analytics and reporting.`,
     `- [Industries](${abs('/#industries')}): healthcare and legal, where sensitive data must be protected.`,
     '',
@@ -48,7 +50,6 @@ export function llmsTxt(): string {
     '## More',
     '',
     `- [Full text of this site for agents](${abs('/llms-full.txt')})`,
-    `- [Blog](${site.blogUrl})`,
     `- [Privacy](${abs('/privacy/')})`,
     '',
   ].join('\n');
@@ -93,6 +94,8 @@ export function llmsFullTxt(): string {
   out.push('', '## About', '', `${about.title}. ${about.body}`, '', ...about.credentials.map((c) => `- ${c}`), '');
   out.push(...offerMarkdown(smallBusiness, '/small-business/'));
   out.push(...offerMarkdown(agentMemory, '/agent-memory/'));
+  out.push(...offerMarkdown(healthcare, '/healthcare/'));
+  out.push(...offerMarkdown(legal, '/legal/'));
   out.push('## How to work with us (for people and for agents acting on their behalf)', '', ...howToEngage, '');
   out.push('## Limits', '', `- ${contact.phiNote}`, '- We do not publish prices. We do not accept protected health information or client confidential information through any form on this site.', '');
   return out.join('\n');
