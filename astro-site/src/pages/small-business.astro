@@ -2,8 +2,15 @@
 import Base from '../layouts/Base.astro';
 import OfferPage from '../components/OfferPage.astro';
 import { smallBusiness } from '../data/offers';
+import { offerGraph } from '../data/seo';
+
+const graph = offerGraph(smallBusiness, '/small-business/', {
+  name: 'AI for small business',
+  serviceType: 'AI implementation and workflow automation',
+  audience: 'Small businesses',
+});
 ---
 
-<Base title={smallBusiness.seo.title} description={smallBusiness.seo.description}>
+<Base title={smallBusiness.seo.title} description={smallBusiness.seo.description} graph={graph}>
   <OfferPage content={smallBusiness} />
 </Base>

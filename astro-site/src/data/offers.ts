@@ -27,15 +27,15 @@ const book: Cta = { label: 'Book a consult', href: site.bookingUrl };
 
 export const smallBusiness: OfferPageContent = {
   seo: {
-    title: 'AI for Small Business | Little Town Labs',
+    title: 'AI Setup and Automation for Small Business | Little Town Labs',
     description:
-      'We set up OpenAI tools safely, build the few workflows that save your team hours, and keep them tuned. No big IT project.',
+      'We set up ChatGPT and OpenAI tools safely, build the few workflows and automations that save your team hours, and keep them tuned.',
   },
   hero: {
     eyebrow: 'AI for small business',
     title: 'AI that saves your team hours, set up safely.',
     subhead:
-      'We set up OpenAI tools the right way, build the few workflows that pay for themselves, and keep them tuned. No big IT project, no jargon.',
+      'We set up OpenAI tools the right way, build the few workflows and automations that pay for themselves, and keep them tuned. No big IT project, no jargon.',
     primaryCta: book,
     secondaryCta: { label: 'See the packages', href: '#packages' },
   },
@@ -163,6 +163,10 @@ export const smallBusiness: OfferPageContent = {
         a: 'The policy and settings reduce the risk, and for sensitive work we can add automatic redaction before data reaches a model.',
       },
       {
+        q: 'Do you work with businesses outside the United States?',
+        a: 'We work with companies and organizations in the United States only.',
+      },
+      {
         q: 'What does it cost?',
         a: 'The packages are fixed fees. We agree the scope and the price after a short discovery call, so there are no surprises.',
       },
@@ -177,7 +181,7 @@ export const smallBusiness: OfferPageContent = {
 
 export const agentMemory: OfferPageContent = {
   seo: {
-    title: 'Agent Memory | Little Town Labs',
+    title: 'AI Agent Memory Layer for Companies | Little Town Labs',
     description:
       'A shared AI memory layer that runs in your environment, so every assistant and agent knows what your company knows, and you can see, correct, and delete it.',
   },
@@ -313,6 +317,10 @@ export const agentMemory: OfferPageContent = {
       {
         q: 'Why not use an AI platform that has memory built in?',
         a: 'Built-in memory is convenient, but it often lives inside one vendor\'s product, and basics like where it is stored, who can delete it, and whether you can take it with you are not always clear. A memory layer you own answers those questions up front.',
+      },
+      {
+        q: 'Do you work with companies outside the United States?',
+        a: 'We work with companies and organizations in the United States only.',
       },
       {
         q: 'Is it open source, and who supports it?',

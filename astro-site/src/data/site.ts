@@ -11,6 +11,7 @@ export const site = {
   partnerUrl: 'https://timelesstechs.com/',
   bookingUrl: 'https://book.littletownlabs.com/',
   tagline: 'De-identification, analytics, AI gateways, and AI implementation for regulated industries.',
+  serviceArea: 'We work with companies and organizations in the United States.',
 };
 
 export const nav = [

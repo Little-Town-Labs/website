@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
+import { globalGraph, jsonLd } from '../data/seo';
 import sans400 from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2?url';
 import sans700 from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2?url';
 import mono400 from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url';
@@ -14,9 +15,11 @@ const preloadFonts = [sans400, sans700, mono400, mono500];
 interface Props {
   title?: string;
   description?: string;
+  /** Extra schema.org nodes for this page, added to the site-wide Organization and WebSite. */
+  graph?: object[];
 }
 
-const { title = site.title, description = site.description } = Astro.props;
+const { title = site.title, description = site.description, graph = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const ogImage = new URL('/images/og-image.png', site.url).href;
 ---
@@ -31,16 +34,22 @@ const ogImage = new URL('/images/og-image.png', site.url).href;
     {preloadFonts.map((href) => <link rel="preload" as="font" type="font/woff2" href={href} crossorigin />)}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <script type="application/ld+json" set:html={jsonLd([...globalGraph, ...graph])} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="Little Town Labs" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Little Town Labs" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
