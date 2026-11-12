@@ -1,6 +1,6 @@
 ---
 import ContactForm from './ContactForm.astro';
-import { contact } from '../data/site';
+import { contact, site } from '../data/site';
 
 interface Props {
   /** Render the title as the page's H1 (standalone /contact route). */
@@ -16,6 +16,7 @@ const Heading = asH1 ? 'h1' : 'h2';
       <Heading class="h2">{contact.title}</Heading>
       <p>{contact.body}</p>
       <a class="btn btn-primary" href={contact.bookingCta.href}>{contact.bookingCta.label}</a>
+      <p class="email">{contact.emailNote} <a href={`mailto:${site.email}`}>{site.email}</a><br /><span>{contact.emailPhiNote}</span></p>
     </div>
     <ContactForm />
   </div>
@@ -31,4 +32,6 @@ const Heading = asH1 ? 'h1' : 'h2';
   .copy { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
   .copy :global(.h2) { text-wrap: balance; }
   .copy p { color: var(--text-muted); font-size: 18px; }
+  .copy .email { font-size: 16px; }
+  .copy .email span { font-size: 14px; }
 </style>
