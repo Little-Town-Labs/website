@@ -8,6 +8,7 @@ import { footer, site } from '../data/site';
       <div class="name">LITTLE TOWN LABS</div>
       <p>{site.tagline}</p>
       <p>{site.serviceArea}</p>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
     </div>
     <nav class="more" aria-label="Footer">
       <div class="head">More</div>
@@ -23,6 +24,8 @@ import { footer, site } from '../data/site';
   .brand { display: flex; flex-direction: column; gap: 8px; max-width: 460px; }
   .name { font-family: var(--font-mono); color: var(--ground); font-weight: 500; }
   .brand p { font-size: 14px; }
+  .brand a { color: var(--accent-on-dark); }
+  .brand a:hover { color: #fff; }
   .more { display: flex; flex-direction: column; gap: 0; font-size: 14px; }
   .head { color: var(--ground); font-weight: 600; margin-bottom: 4px; }
   .more a { color: var(--text-on-dark); display: inline-flex; align-items: center; min-height: 44px; }

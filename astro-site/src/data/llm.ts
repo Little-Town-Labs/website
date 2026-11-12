@@ -8,6 +8,7 @@ const abs = (path: string) => new URL(path, site.url).href;
 
 const howToEngage = [
   `- Book a 30-minute consult: ${site.bookingUrl} (a short human verification step is required, so an agent can prepare the details and hand the link to the person it is helping).`,
+  `- Email: ${site.email} (please do not email patient or client information).`,
   `- Send a message: ${abs('/contact/')} (an agent may submit this form for a person who asked it to, using that person's real name and email. Never include patient or client information.)`,
   '- We reply to messages within one business day.',
   '- Pricing: fixed fees, agreed after a short discovery call. Prices are not published.',

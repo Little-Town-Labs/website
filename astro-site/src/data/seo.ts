@@ -16,6 +16,7 @@ export const organization = {
   logo: { '@type': 'ImageObject', url: abs('/images/logo.png'), width: 192, height: 192 },
   image: abs('/images/og-image.png'),
   description: site.description,
+  email: site.email,
   areaServed: { '@type': 'Country', name: 'United States' },
   founder: {
     '@type': 'Person',
@@ -36,6 +37,7 @@ export const organization = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',
+    email: site.email,
     url: abs('/contact/'),
     availableLanguage: 'English',
   },

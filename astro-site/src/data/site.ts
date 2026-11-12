@@ -9,6 +9,7 @@ export const site = {
     'We help small businesses, clinics, law firms, and growing companies put AI to work safely, with data protection, AI gateways, and agent memory.',
   partnerUrl: 'https://timelesstechs.com/',
   bookingUrl: 'https://book.littletownlabs.com/',
+  email: 'hello@littletownlabs.com',
   tagline: 'De-identification, analytics, AI gateways, and AI implementation for regulated industries.',
   serviceArea: 'We work with companies and organizations in the United States.',
 };
@@ -217,6 +218,8 @@ export const contact = {
   body: "Send a short note and we'll reply within one business day with next steps. Prefer to pick a time? Book a 30-minute consult instead.",
   bookingCta: { label: 'Book a consult', href: site.bookingUrl },
   phiNote: "Please don't include patient or client information in this form.",
+  emailNote: 'Prefer email?',
+  emailPhiNote: "Please don't email patient or client information.",
   industryPrompt: 'Select one',
   industries: ['Small business', 'Healthcare', 'Legal', 'Company adding AI', 'Other'],
 };
