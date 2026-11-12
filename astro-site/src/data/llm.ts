@@ -2,6 +2,7 @@
 // /llms-full.txt). Generated from the same data as the pages, so they cannot drift from what visitors read.
 // Same copy rules as site.ts: no em dashes, no invented numbers, prices, or results.
 import { about, contact, industries, process, services, site } from './site';
+import { getPosts, postPath } from './blog';
 import { agentMemory, healthcare, legal, smallBusiness, type OfferPageContent } from './offers';
 
 const abs = (path: string) => new URL(path, site.url).href;
@@ -17,7 +18,8 @@ const howToEngage = [
 
 const serviceLines = services.map((s) => `- ${s.title}: ${s.body}`);
 
-export function llmsTxt(): string {
+export async function llmsTxt(): Promise<string> {
+  const posts = await getPosts();
   return [
     `# ${site.name}`,
     '',
@@ -48,6 +50,7 @@ export function llmsTxt(): string {
     '',
     ...howToEngage,
     '',
+    ...(posts.length ? ['## Blog', '', ...posts.map((p) => `- [${p.data.title}](${abs(postPath(p))}): ${p.data.description}`), ''] : []),
     '## More',
     '',
     `- [Full text of this site for agents](${abs('/llms-full.txt')})`,
@@ -76,7 +79,8 @@ function offerMarkdown(c: OfferPageContent, path: string): string[] {
   return out;
 }
 
-export function llmsFullTxt(): string {
+export async function llmsFullTxt(): Promise<string> {
+  const posts = await getPosts();
   const out = [
     `# ${site.name}: full site text for AI agents`,
     '',
@@ -97,6 +101,10 @@ export function llmsFullTxt(): string {
   out.push(...offerMarkdown(agentMemory, '/agent-memory/'));
   out.push(...offerMarkdown(healthcare, '/healthcare/'));
   out.push(...offerMarkdown(legal, '/legal/'));
+  if (posts.length) {
+    out.push('## Blog', '');
+    for (const p of posts) out.push(`### ${p.data.title}`, '', `Page: ${abs(postPath(p))}`, `Published: ${p.data.date.toISOString().slice(0, 10)}`, '', p.data.description, '');
+  }
   out.push('## How to work with us (for people and for agents acting on their behalf)', '', ...howToEngage, '');
   out.push('## Limits', '', `- ${contact.phiNote}`, '- We do not publish prices. We do not accept protected health information or client confidential information through any form on this site.', '');
   return out.join('\n');

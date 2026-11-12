@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
 import { globalGraph, jsonLd } from '../data/seo';
+import { getPosts } from '../data/blog';
 import sans400 from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2?url';
 import sans700 from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2?url';
 import mono400 from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url';
@@ -17,9 +18,17 @@ interface Props {
   description?: string;
   /** Extra schema.org nodes for this page, added to the site-wide Organization and WebSite. */
   graph?: object[];
+  /** Ask search engines not to index this page (draft previews, empty blog). */
+  noindex?: boolean;
+  /** Open Graph type; "article" for blog posts. */
+  ogType?: 'website' | 'article';
+  /** Article timestamps, for blog posts. */
+  published?: Date;
+  modified?: Date;
 }
 
-const { title = site.title, description = site.description, graph = [] } = Astro.props;
+const { title = site.title, description = site.description, graph = [], noindex = false, ogType = 'website', published, modified } = Astro.props;
+const hasBlog = (await getPosts()).length > 0;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const ogImage = new URL('/images/og-image.png', site.url).href;
 ---
@@ -36,7 +45,11 @@ const ogImage = new URL('/images/og-image.png', site.url).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <script type="application/ld+json" set:html={jsonLd([...globalGraph, ...graph])} />
-    <meta property="og:type" content="website" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {hasBlog && <link rel="alternate" type="application/rss+xml" title={`${site.name} blog`} href="/blog/rss.xml" />}
+    <meta property="og:type" content={ogType} />
+    {published && <meta property="article:published_time" content={published.toISOString()} />}
+    {modified && <meta property="article:modified_time" content={modified.toISOString()} />}
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

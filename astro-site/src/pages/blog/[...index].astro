@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+import DraftBanner from '../../components/DraftBanner.astro';
+import { getPosts, postPath, formatDate, readingMinutes } from '../../data/blog';
+import { blogIndexGraph } from '../../data/seo';
+
+export async function getStaticPaths() {
+  // No posts (nothing published and not a preview): do not build /blog/ at all.
+  return (await getPosts()).length ? [{ params: { index: undefined } }] : [];
+}
+
+const posts = await getPosts();
+const live = posts.filter((p) => !p.data.draft);
+---
+
+<Base
+  title="Blog | Little Town Labs"
+  description="Practical guidance on HIPAA de-identification, safe AI for law firms and small businesses, and agent memory."
+  graph={blogIndexGraph()}
+  noindex={live.length === 0}
+>
+  <section class="head on-dark">
+    <div class="container">
+      <p class="eyebrow">Blog</p>
+      <h1>Practical notes on using AI safely</h1>
+      <p class="sub">De-identification, law firm AI policy, and what small teams need to know before they connect AI to real data.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container list">
+      {posts.map((p) => (
+        <article class="post">
+          {p.data.draft && <DraftBanner />}
+          <p class="meta">{formatDate(p.data.date)} &middot; {readingMinutes(p)} min read</p>
+          <h2><a href={postPath(p)}>{p.data.title}</a></h2>
+          <p>{p.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head { background: var(--ink); color: #fff; padding: 72px 0 56px; }
+  .head h1 { font-size: 44px; line-height: 1.1; margin: 8px 0 16px; max-width: 760px; }
+  .head .sub { color: var(--text-on-dark); font-size: 19px; max-width: 680px; margin: 0; }
+  .eyebrow { color: var(--accent-on-dark); text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; font-weight: 600; margin: 0; }
+  .list { max-width: 760px; }
+  .post { padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .post:last-child { border-bottom: 0; }
+  .meta { color: var(--subtle); font-size: 15px; margin: 0 0 6px; }
+  .post h2 { font-size: 26px; line-height: 1.25; margin: 0 0 8px; }
+  .post h2 a { color: var(--ink); text-decoration: none; }
+  .post h2 a:hover { color: var(--accent); text-decoration: underline; }
+  .post p:last-child { margin: 0; color: var(--text-muted); font-size: 18px; }
+  @media (max-width: 700px) { .head h1 { font-size: 32px; } .head { padding: 48px 0 40px; } }
+</style>

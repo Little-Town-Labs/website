@@ -109,3 +109,46 @@ export function offerGraph(c: OfferPageContent, path: string, opts: { name: stri
 // JSON for a <script type="application/ld+json"> block. "<" is escaped so the data can never close the tag.
 export const jsonLd = (graph: object[]) =>
   JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+
+// Blog index: a Blog node plus the breadcrumb.
+export const blogIndexGraph = () => [
+  {
+    '@type': 'Blog',
+    '@id': `${abs('/blog/')}#blog`,
+    url: abs('/blog/'),
+    name: `${site.name} blog`,
+    description: 'Practical guidance on HIPAA de-identification, safe AI for law firms and small businesses, and agent memory.',
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en',
+  },
+  breadcrumb('Blog', '/blog/'),
+];
+
+// One blog post: BlogPosting plus a Home > Blog > Post breadcrumb.
+export function blogPostGraph(p: { title: string; description: string; path: string; date: Date; updated?: Date; author: string; tags: string[] }) {
+  const url = abs(p.path);
+  return [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${url}#article`,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      headline: p.title,
+      description: p.description,
+      datePublished: p.date.toISOString(),
+      dateModified: (p.updated ?? p.date).toISOString(),
+      author: { '@type': 'Person', name: p.author, url: abs('/#about') },
+      publisher: { '@id': ORG_ID },
+      image: abs('/images/og-image.png'),
+      keywords: p.tags.join(', '),
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: abs('/blog/') },
+        { '@type': 'ListItem', position: 3, name: p.title, item: url },
+      ],
+    },
+  ];
+}

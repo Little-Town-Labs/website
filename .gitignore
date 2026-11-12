@@ -59,3 +59,6 @@ docs/
 
 # Local Netlify folder
 .netlify
+
+# Blog posts are content, not docs
+!astro-site/src/content/blog/*.md
