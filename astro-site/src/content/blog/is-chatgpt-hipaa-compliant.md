@@ -11,7 +11,7 @@ Clinic owners ask us this constantly, usually because someone on staff has alrea
 
 ## What HIPAA actually requires
 
-When a vendor creates, receives, stores, or transmits protected health information (PHI) for you, that vendor is a business associate. HIPAA requires a signed business associate agreement (BAA) with them before you share PHI. You also need appropriate safeguards, access controls, and a way to show what happened to the data.
+When a vendor creates, receives, stores, or transmits protected health information (PHI) for you, that vendor is a business associate ([45 CFR 164.502(e)](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.502)). HIPAA requires a signed business associate agreement (BAA) with them before you share PHI. You also need appropriate safeguards, access controls, and a way to show what happened to the data.
 
 So the questions are not "is this product compliant?" but:
 
@@ -19,7 +19,7 @@ So the questions are not "is this product compliant?" but:
 2. **Do the vendor's data terms fit our use?** Look at retention, whether your data is used to train models, where it is processed, and who can access it.
 3. **Do we have our own controls?** Individual logins, access limits, logging, and a written policy for staff.
 
-Check the vendor's current documentation and contract for the answers. They change, and you should not rely on a blog post, including this one, for the current terms.
+HHS applies the same logic to cloud services in its [cloud computing guidance](https://www.hhs.gov/hipaa/for-professionals/special-topics/cloud-computing). Check the vendor's current documentation and contract for the answers; OpenAI describes its BAA process and which products it covers in its [help center article on BAAs](https://help.openai.com/en/articles/8660679). They change, and you should not rely on a blog post, including this one, for the current terms.
 
 ## The consumer-account problem
 
@@ -35,7 +35,7 @@ A simple policy fixes most of this:
 
 **1. Use a vendor and plan that will sign a BAA.** Confirm it in writing, configure it correctly, and keep the agreement on file.
 
-**2. De-identify before the data reaches the AI.** If the AI never sees PHI, the question changes. Strip names, dates, record numbers, and other identifiers first (see our post on [Safe Harbor versus Expert Determination](/blog/hipaa-safe-harbor-vs-expert-determination/)), send the clean text, and restore details afterwards if you need them. This is the approach we build.
+**2. De-identify before the data reaches the AI.** If the AI never sees PHI, the question changes. Strip names, dates, record numbers, and other identifiers first (see our post on [Safe Harbor versus Expert Determination](/blog/hipaa-safe-harbor-vs-expert-determination/) and the [HHS de-identification guidance](https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html)), send the clean text, and restore details afterwards if you need them. This is the approach we build.
 
 **3. Keep the model inside your own environment.** For the most sensitive uses, run a model you control so that data never leaves your network.
 
@@ -53,3 +53,12 @@ Many clinics use a mix: de-identification for everyday drafting and summarizing,
 ## Bottom line
 
 "Is ChatGPT HIPAA compliant?" is the wrong question. Ask whether this specific product, on this specific plan, under this specific agreement, used by trained staff with these specific controls, fits your obligations. If you would like help building the policy or the de-identification step, book a consult.
+
+## Sources
+
+- [45 CFR 164.502, Uses and disclosures of protected health information: general rules, including (e) on business associates (eCFR)](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.502)
+- [HHS Office for Civil Rights, Guidance on HIPAA and Cloud Computing](https://www.hhs.gov/hipaa/for-professionals/special-topics/cloud-computing)
+- [HHS Office for Civil Rights, Guidance Regarding Methods for De-identification of Protected Health Information](https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html)
+- [OpenAI Help Center, Business Associate Agreement (BAA) (vendor terms change, so read the current page)](https://help.openai.com/en/articles/8660679)
+
+Links checked November 2026. Government and bar association pages change, so confirm against the current text before you rely on it.

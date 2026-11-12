@@ -9,7 +9,7 @@ draft: true
 
 If your clinic or hospital wants to use patient data for analytics, research, or AI, the cleanest path is often to de-identify it first. Properly de-identified data is no longer protected health information (PHI) under HIPAA, which removes a long list of obligations. But "removing the names" is not enough, and the rule gives you exactly two accepted methods.
 
-Both are in the HIPAA Privacy Rule at 45 CFR 164.514(b). This post explains each one in plain language and how to choose. It is general information, not legal advice. Have your privacy officer or counsel confirm anything you rely on.
+Both are in the HIPAA Privacy Rule at [45 CFR 164.514(b)](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.514), and HHS explains them in its [guidance on de-identification](https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html). This post explains each one in plain language and how to choose. It is general information, not legal advice. Have your privacy officer or counsel confirm anything you rely on.
 
 ## Method 1: Safe Harbor
 
@@ -73,3 +73,10 @@ That is the work we do at Little Town Labs: building de-identification pipelines
 ## Bottom line
 
 Safe Harbor is the checklist you can run yourself. Expert Determination is the tailored approach when you need to keep more detail. Neither is a magic switch: the data you release still has to be handled, documented, and reviewed. If you are weighing the two for a specific project, we are happy to talk it through.
+
+## Sources
+
+- [45 CFR 164.514, Other requirements relating to uses and disclosures of protected health information (eCFR)](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.514)
+- [HHS Office for Civil Rights, Guidance Regarding Methods for De-identification of Protected Health Information](https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html)
+
+Links checked November 2026. Government and bar association pages change, so confirm against the current text before you rely on it.

@@ -7,7 +7,7 @@ tags: [legal, law firms, AI policy, ethics]
 draft: true
 ---
 
-In July 2024 the American Bar Association issued Formal Opinion 512, its first ethics guidance on lawyers' use of generative AI. It does not create new rules. It explains how the existing Model Rules apply. Any firm using AI, even occasionally, should have a written policy that reflects it. This is general information, not legal advice, and your state's rules and ethics opinions govern your practice.
+In July 2024 the American Bar Association issued [Formal Opinion 512](https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf), its first ethics guidance on lawyers' use of generative AI. It does not create new rules. It explains how the existing Model Rules apply. Any firm using AI, even occasionally, should have a written policy that reflects it. This is general information, not legal advice, and your state's rules and ethics opinions govern your practice.
 
 ## What the opinion covers
 
@@ -18,7 +18,7 @@ The opinion walks through the duties most affected by generative AI:
 - **Communication (Rule 1.4).** Clients may need to be told when AI is used, depending on the circumstances and how significant the use is to the representation.
 - **Candor and meritorious claims (Rules 3.1, 3.3).** Lawyers must review AI output for accuracy before it goes into a filing. Fabricated citations have already led to sanctions in real cases.
 - **Supervision (Rules 5.1, 5.3).** Partners and managers must set policies and train lawyers and staff on responsible AI use.
-- **Fees (Rule 1.5).** Fees must be reasonable. Time billed should reflect the work actually done, and general overhead costs of an AI tool are not usually billable to the client.
+- **Fees (Rule 1.5).** Fees must be reasonable. Time billed should reflect the work actually done, and general overhead costs of an AI tool are not usually billable to the client. The ABA's article on [fees and AI](https://www.americanbar.org/groups/law_practice/resources/law-practice-today/2024/december-2024/the-reasonableness-of-fees-when-using-ai/) goes deeper.
 
 ## An outline for a firm policy
 
@@ -43,3 +43,11 @@ For matters that are especially sensitive, many firms prefer a setup where ident
 ## Bottom line
 
 Opinion 512 asks for what a careful firm would do anyway: understand the tools, protect client information, check the output, supervise the people, and be honest with clients. A written policy turns that into daily practice. If you want help drafting one, or setting up redaction so sensitive details never reach an outside tool, book a consult.
+
+## Sources
+
+- [ABA Standing Committee on Ethics and Professional Responsibility, Formal Opinion 512: Generative Artificial Intelligence Tools (July 29, 2024)](https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf)
+- [American Bar Association, ABA issues first ethics guidance on a lawyer's use of AI tools (news release)](https://www.americanbar.org/news/abanews/aba-news-archives/2024/07/aba-issues-first-ethics-guidance-ai-tools/)
+- [American Bar Association, Formal Opinion 512 and the Reasonableness of Fees When Using AI](https://www.americanbar.org/groups/law_practice/resources/law-practice-today/2024/december-2024/the-reasonableness-of-fees-when-using-ai/)
+
+Links checked November 2026. Government and bar association pages change, so confirm against the current text before you rely on it.
