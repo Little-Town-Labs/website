@@ -5,3 +5,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Blog drafts (draft: true) are built on deploy previews so they can be reviewed, never on production.
+[context.deploy-preview.environment]
+  PUBLIC_SHOW_DRAFTS = "true"

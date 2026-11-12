@@ -1,0 +1,57 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import DraftBanner from '../../components/DraftBanner.astro';
+import { getPosts, postPath, formatDate, readingMinutes } from '../../data/blog';
+import { blogPostGraph } from '../../data/seo';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const graph = blogPostGraph({ title: d.title, description: d.description, path: postPath(post), date: d.date, updated: d.updated, author: d.author, tags: d.tags });
+---
+
+<Base title={`${d.title} | Little Town Labs`} description={d.description} graph={graph} noindex={d.draft} ogType="article" published={d.date} modified={d.updated ?? d.date}>
+  {d.draft && <DraftBanner />}
+  <article class="section">
+    <div class="container narrow">
+      <p class="crumb"><a href="/blog/">&larr; Blog</a></p>
+      <h1>{d.title}</h1>
+      <p class="meta">By {d.author} &middot; {formatDate(d.date)}{d.updated && ` (updated ${formatDate(d.updated)})`} &middot; {readingMinutes(post)} min read</p>
+      <div class="prose"><Content /></div>
+      <aside class="cta">
+        <h2>Want help applying this?</h2>
+        <p>Book a free 30-minute consult and we will talk through your situation. Please do not send patient or client information.</p>
+        <a class="btn btn-primary" href="/contact/">Talk to us</a>
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .narrow { max-width: 740px; }
+  .crumb { margin: 0 0 16px; font-size: 15px; }
+  .crumb a { color: var(--accent); }
+  h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 12px; }
+  .meta { color: var(--subtle); font-size: 15px; margin: 0 0 32px; }
+  .prose { font-size: 19px; line-height: 1.7; color: var(--ink); }
+  .prose :global(h2) { font-size: 28px; line-height: 1.25; margin: 40px 0 12px; }
+  .prose :global(h3) { font-size: 21px; margin: 28px 0 8px; }
+  .prose :global(p), .prose :global(ul), .prose :global(ol) { margin: 0 0 18px; }
+  .prose :global(li) { margin-bottom: 6px; }
+  .prose :global(a) { color: var(--accent); text-decoration: underline; }
+  .prose :global(blockquote) { margin: 0 0 18px; padding: 4px 0 4px 18px; border-left: 4px solid var(--accent); color: var(--text-muted); }
+  .prose :global(table) { border-collapse: collapse; width: 100%; margin: 0 0 24px; font-size: 16px; }
+  .prose :global(th), .prose :global(td) { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--line); }
+  .prose :global(th) { background: var(--ground-alt); }
+  .prose :global(code) { font-family: var(--font-mono); font-size: 0.9em; background: var(--ground-alt); padding: 1px 5px; border-radius: 4px; }
+  .cta { margin-top: 48px; padding: 28px; background: var(--ground-alt); border-radius: var(--radius-card); }
+  .cta h2 { font-size: 24px; margin: 0 0 8px; }
+  .cta p { margin: 0 0 16px; color: var(--text-muted); }
+  @media (max-width: 700px) { h1 { font-size: 30px; } .prose { font-size: 18px; } .prose :global(table) { display: block; overflow-x: auto; } }
+</style>

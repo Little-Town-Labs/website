@@ -1,5 +1,8 @@
 ---
 import { footer, site } from '../data/site';
+import { getPosts } from '../data/blog';
+
+const hasBlog = (await getPosts()).length > 0;
 ---
 
 <footer class="on-dark">
@@ -13,6 +16,7 @@ import { footer, site } from '../data/site';
     <nav class="more" aria-label="Footer">
       <div class="head">More</div>
       {footer.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      {hasBlog && <a href="/blog/">Blog</a>}
     </nav>
   </div>
   <div class="container copy">{footer.copyright}</div>
