@@ -16,6 +16,7 @@ export const organization = {
   logo: { '@type': 'ImageObject', url: abs('/images/logo.png'), width: 192, height: 192 },
   image: abs('/images/og-image.png'),
   description: site.description,
+  areaServed: { '@type': 'Country', name: 'United States' },
   founder: {
     '@type': 'Person',
     name: 'Gary Brown',
@@ -80,6 +81,7 @@ export function offerGraph(c: OfferPageContent, path: string, opts: { name: stri
       url,
       description: c.hero.subhead,
       provider: { '@id': ORG_ID },
+      areaServed: { '@type': 'Country', name: 'United States' },
       audience: { '@type': 'Audience', audienceType: opts.audience },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',

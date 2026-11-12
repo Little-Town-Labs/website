@@ -163,6 +163,10 @@ export const smallBusiness: OfferPageContent = {
         a: 'The policy and settings reduce the risk, and for sensitive work we can add automatic redaction before data reaches a model.',
       },
       {
+        q: 'Do you work with businesses outside the United States?',
+        a: 'We work with companies and organizations in the United States only.',
+      },
+      {
         q: 'What does it cost?',
         a: 'The packages are fixed fees. We agree the scope and the price after a short discovery call, so there are no surprises.',
       },
@@ -313,6 +317,10 @@ export const agentMemory: OfferPageContent = {
       {
         q: 'Why not use an AI platform that has memory built in?',
         a: 'Built-in memory is convenient, but it often lives inside one vendor\'s product, and basics like where it is stored, who can delete it, and whether you can take it with you are not always clear. A memory layer you own answers those questions up front.',
+      },
+      {
+        q: 'Do you work with companies outside the United States?',
+        a: 'We work with companies and organizations in the United States only.',
       },
       {
         q: 'Is it open source, and who supports it?',

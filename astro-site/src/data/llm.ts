@@ -11,6 +11,7 @@ const howToEngage = [
   `- Send a message: ${abs('/contact/')} (an agent may submit this form for a person who asked it to, using that person's real name and email. Never include patient or client information.)`,
   '- We reply to messages within one business day.',
   '- Pricing: fixed fees, agreed after a short discovery call. Prices are not published.',
+  `- Service area: ${site.serviceArea} We do not take on clients outside the United States.`,
 ];
 
 const serviceLines = services.map((s) => `- ${s.title}: ${s.body}`);
@@ -21,7 +22,7 @@ export function llmsTxt(): string {
     '',
     `> ${site.description}`,
     '',
-    `${site.name} is a consultancy founded by Gary Brown, who has more than 25 years in financial services data and analytics. We help small businesses, clinics, law firms, and growing companies put AI to work safely.`,
+    `${site.name} is a consultancy founded by Gary Brown, who has more than 25 years in financial services data and analytics. We help small businesses, clinics, law firms, and growing companies put AI to work safely. ${site.serviceArea}`,
     '',
     '## What we do',
     '',
