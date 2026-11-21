@@ -18,7 +18,7 @@ The opinion walks through the duties most affected by generative AI:
 - **Communication (Rule 1.4).** Clients may need to be told when AI is used, depending on the circumstances and how significant the use is to the representation.
 - **Candor and meritorious claims (Rules 3.1, 3.3).** Lawyers must review AI output for accuracy before it goes into a filing. Fabricated citations have already led to sanctions in real cases.
 - **Supervision (Rules 5.1, 5.3).** Partners and managers must set policies and train lawyers and staff on responsible AI use.
-- **Fees (Rule 1.5).** Fees must be reasonable. Time billed should reflect the work actually done, and general overhead costs of an AI tool are not usually billable to the client. The ABA's article on [fees and AI](https://www.americanbar.org/groups/law_practice/resources/law-practice-today/2024/december-2024/the-reasonableness-of-fees-when-using-ai/) goes deeper.
+- **Fees (Rule 1.5).** Fees must be reasonable, and time billed should reflect the work actually done. The opinion also separates two kinds of tool cost. A tool that works like office equipment, such as a grammar checker built into word processing software, is overhead and should not be billed to the client unless the client was told otherwise in advance. A per-use third-party service used on one client's matter, such as one that reviews thousands of contracts and charges per use, can ordinarily be billed at its actual cost. The ABA's article on [fees and AI](https://www.americanbar.org/groups/law_practice/resources/law-practice-today/2024/december-2024/the-reasonableness-of-fees-when-using-ai/) goes deeper.
 
 ## An outline for a firm policy
 
