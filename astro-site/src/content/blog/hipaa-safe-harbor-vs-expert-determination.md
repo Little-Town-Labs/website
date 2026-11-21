@@ -1,10 +1,9 @@
 ---
 title: "HIPAA de-identification: Safe Harbor or Expert Determination?"
 description: "HIPAA gives two ways to de-identify health data. Here is how Safe Harbor and Expert Determination differ, and how to choose."
-date: 2026-11-12
+date: 2026-11-21
 author: Gary Brown
 tags: [HIPAA, de-identification, healthcare, AI]
-draft: true
 ---
 
 If your clinic or hospital wants to use patient data for analytics, research, or AI, the cleanest path is often to de-identify it first. Properly de-identified data is no longer protected health information (PHI) under HIPAA, which removes a long list of obligations. But "removing the names" is not enough, and the rule gives you exactly two accepted methods.
