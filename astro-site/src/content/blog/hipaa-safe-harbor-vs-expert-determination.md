@@ -18,7 +18,7 @@ The 18 identifiers are:
 
 1. Names
 2. Geographic units smaller than a state (street address, city, county, and most of the ZIP code)
-3. All elements of dates (except year) directly related to a person, such as birth, admission, discharge, and death dates, and all ages over 89
+3. Date details other than the year for dates directly related to a person, such as birth, admission, discharge, and death dates. Remove exact ages over 89 and date details that reveal those ages, even if the detail is just a year. You can group those ages and related date details into one category: “90 or older.”
 4. Telephone numbers
 5. Fax numbers
 6. Email addresses
@@ -39,7 +39,7 @@ The first three digits of a ZIP code can stay when the area they cover has more 
 
 **Strengths:** it is clear, repeatable, and needs no outside expert.
 
-**Weaknesses:** it is blunt. Removing every date makes timelines (time between admission and a complication, for example) hard to study. And the 18th item, plus the "no actual knowledge" condition, catches people out. Free-text clinical notes are the usual trouble spot: a note that says "the mayor's wife" or names a rare condition and a small town can identify someone even with every field scrubbed.
+**Weaknesses:** it is blunt. Removing month and day details makes timelines (time between admission and a complication, for example) hard to study. And the 18th item, plus the "no actual knowledge" condition, catches people out. Free-text clinical notes are the usual trouble spot: a note that says "the mayor's wife" or names a rare condition and a small town can identify someone even with every field scrubbed.
 
 ## Method 2: Expert Determination
 
@@ -55,7 +55,7 @@ HIPAA does not set a numeric threshold. The expert judges the risk in context: w
 
 | Question | Leans toward |
 |---|---|
-| Do you need dates, ages over 89, or small geographic areas to do the work? | Expert Determination |
+| Do you need date details beyond the year, exact ages over 89, or small geographic areas to do the work? | Expert Determination |
 | Is the data mostly structured fields with no free text? | Safe Harbor |
 | Will the data go to a wide or unknown audience? | Safe Harbor, or a very conservative expert determination |
 | Does the data contain lots of free-text notes, images, or scans? | Either, but plan for careful automated and human review |
